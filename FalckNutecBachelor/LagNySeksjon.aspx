@@ -1,13 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LagNySeksjon.aspx.cs" Inherits="FalckNutecBachelor.LagNySeksjon" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNySeksjon.aspx.cs" Inherits="FalckNutecBachelor.LagNySeksjon" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
     <title>Ny Seksjon</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+    <form id="form1">
     <div>
         <h1>Ny Seksjon</h1>
         <p>//Lager en ny seksjon for en Admin, og skal også kunne redigere eksisterende seksjoner.</p>
@@ -17,5 +16,5 @@
         <asp:Button ID="Button1" runat="server" Text="Lan ny Seksjon" />
     </div>
     </form>
-</body>
-</html>
+</asp:Content>
+
