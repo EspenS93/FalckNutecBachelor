@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Startskjema.aspx.cs" Inherits="Oving1.Startskjema" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Startskjema.aspx.cs" Inherits="Oving1.Startskjema" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+<head>
     <title>Startskjema</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+    <form id="form1">
     <h1>Startskjema</h1>
         <p><asp:Image ID="Image1" runat="server" Height="50px" ImageUrl="~/Pictures/FalckN_logo_pos_trans.png" style="margin-right: 0px" /></p>
     <div>
@@ -30,5 +30,4 @@
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Hjem</asp:HyperLink>
         </div>
     </form>
-</body>
-</html>
+</asp:Content>
