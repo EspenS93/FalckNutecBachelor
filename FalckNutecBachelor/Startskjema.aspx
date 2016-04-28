@@ -26,6 +26,13 @@
             </asp:DropDownList></p>
 
     </div>
+       <div>
+           <p></p>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/LagNyBruker.aspx">LagNyBruker</asp:HyperLink>
+           &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/LagNySeksjon.aspx">LagNySeksjon</asp:HyperLink>
+           <p></p>
+        </div>
         <div>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Hjem</asp:HyperLink>
         </div>
