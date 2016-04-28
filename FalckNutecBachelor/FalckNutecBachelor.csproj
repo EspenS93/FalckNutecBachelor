@@ -210,6 +210,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="LagNyBruker.aspx" />
+    <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -395,6 +397,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyBruker.aspx.cs">
+      <DependentUpon>LagNyBruker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyBruker.aspx.designer.cs">
+      <DependentUpon>LagNyBruker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNySeksjon.aspx.cs">
+      <DependentUpon>LagNySeksjon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNySeksjon.aspx.designer.cs">
+      <DependentUpon>LagNySeksjon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
