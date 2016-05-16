@@ -17,13 +17,16 @@
         <asp:Button ID="Button2" runat="server" Text="Leverandører" /></p>
 
         <h3>Rapporter</h3>
-        <p><asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>Velg ett eller anna</asp:ListItem>
+        <p>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource3" DataTextField="Navn" DataValueField="Navn">
+                <asp:ListItem>Klikk for å velge leverandør</asp:ListItem>
             </asp:DropDownList>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
+            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="navn" DataValueField="navn">
                 <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
-            </asp:DropDownList></p>
+            </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString %>' SelectCommand="SELECT [navn] FROM [Avtaler]"></asp:SqlDataSource>
+        </p>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
             <EditItemTemplate>
                 AvtaleTypeID:
