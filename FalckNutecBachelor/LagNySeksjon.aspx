@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNySeksjon.aspx.cs" Inherits="FalckNutecBachelor.LagNySeksjon" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNySeksjon.aspx.cs" Inherits="FalckNutecBachelor.LagNySeksjon" EnableEventValidation="false" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 <head>
@@ -12,8 +11,10 @@
         <p>//Lager en ny seksjon for en Admin, og skal også kunne redigere eksisterende seksjoner.</p>
         <p>SeksjonsID: <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> <-Skal være et tall!</p>
         <p>Navn: <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></p>
-        <p></p>
-        <asp:Button ID="Button1" runat="server" Text="Lan ny Seksjon" />
+        <p>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </p>
+        <asp:Button ID="Button1" runat="server" Text="Lan ny Seksjon" OnClick="Button1_Click" />
     </div>
     </form>
 </asp:Content>
