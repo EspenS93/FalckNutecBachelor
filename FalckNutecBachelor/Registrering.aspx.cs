@@ -26,5 +26,37 @@ namespace Oving1
         {
 
         }
+
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (RB_Start.Checked)
+            {
+                LabelStartDato.Text = Calendar1.SelectedDate.Date.ToLongDateString();
+            }
+            if (RB_Slutt.Checked)
+            {
+                LabelSluttDato.Text = Calendar1.SelectedDate.Date.ToLongDateString();
+            }
+            /*if (LabelStartDato.Text.Length > 0 && LabelSluttDato.Text.Length > 0)
+            {
+                Date_Check();
+            } */ 
+        }
+        
+        /* protected void Date_Check()
+        {
+            if (Convert.ToDateTime(LabelStartDato) > Convert.ToDateTime(LabelSluttDato))
+            {
+                LabelMelding.Text = "Start dato kan ikke være før slutt dato!";
+            }
+        } */
     }
+
+    
 }
+
