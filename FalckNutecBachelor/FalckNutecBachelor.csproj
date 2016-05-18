@@ -33,6 +33,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="AvtaleDatabaseConnectionString-Deployment" Order="2">
+          <Destination Path="Data Source=WIN-QT7KGL9HG25\SQLEXPRESS%3bInitial Catalog=AvtaleDatabase%3bUser ID=dbUser%3bPassword=Bachelor2016" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=WIN-QT7KGL9HG25\SQLEXPRESS%3bInitial Catalog=AvtaleDatabase%3bUser ID=dbUser%3bPassword=Bachelor2016" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\AvtaleDatabaseConnectionString-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -213,6 +224,10 @@
     <Content Include="LagNyBruker.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -414,6 +429,11 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Registrering.aspx.cs">
       <DependentUpon>Registrering.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

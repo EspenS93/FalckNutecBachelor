@@ -14,7 +14,7 @@
         <p>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </p>
-        <asp:Button ID="Button1" runat="server" Text="Lan ny Seksjon" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Lag ny Seksjon" OnClick="Button1_Click" />
     </div>
     </form>
 </asp:Content>
