@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registrering.aspx.cs" Inherits="Oving1.Registrering" %>
+﻿<%@ Page Language="C#" EnableEventValidation="true"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registrering.aspx.cs" Inherits="Oving1.Registrering" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <form id="form1">
+    
     <div>
     <h1>Registrering</h1>
         <p>
@@ -30,10 +30,19 @@
         <p>Avtalenr: <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox></p>
         <p>Plassering: <asp:TextBox ID="TextBox6" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox></p>
         <p>Serienr: <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox></p>
-        <p>Startdato<asp:Calendar ID="Calendar1" runat="server">
-            </asp:Calendar></p>
-        <p>Sluttdato<asp:Calendar ID="Calendar2" runat="server">
-            </asp:Calendar></p>
+        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged">
+            </asp:Calendar>
+        <br />
+        Start dato: <asp:RadioButton ID="RB_Start" Checked="true" GroupName="Datodiff" runat="server" />
+            <asp:Label ID="LabelStartDato" runat="server" Text=""></asp:Label>
+        <br />
+        Slutt dato: <asp:RadioButton ID="RB_Slutt" GroupName="Datodiff" runat="server" />
+            <asp:Label ID="LabelSluttDato" runat="server" Text=""></asp:Label>
+        <br />
+        Måneder: <asp:Label ID="LabelMnd" runat="server" Text="Måneder"></asp:Label>
+        
+        <p><asp:Label ID="LabelMelding" runat="server" Text=""></asp:Label></p>
+
         <p>Seksjon: <asp:DropDownList ID="DropDownList3" runat="server">
             <asp:ListItem>Ulike seksjoner</asp:ListItem>
             </asp:DropDownList>
@@ -63,5 +72,5 @@
             
 
         </div>
-  </form>
+  
 </asp:Content>
