@@ -5,11 +5,11 @@
     <div>
         <h1>&nbsp;</h1>
         <h1>Velkommen til Falck Nutec AS</h1>
-        <p>
-            <asp:Image ID="Image1" runat="server" Height="50px" ImageUrl="~/Pictures/FalckN_logo_pos_trans.png" style="margin-right: 0px" />
-        </p>
         <p class="lead">Her kan du logge inn og registrere avtaler for bedriften.</p>
-        <p><asp:Login ID="Login1" runat="server"></asp:Login></p>
+        <asp:Login ID="Login" runat="server" DestinationPageUrl="terms.aspx" Font-Size="12pt" Height="120px" Width="500px">
+            <LoginButtonStyle Height="50px" Width="100px" />
+            <TextBoxStyle Height="30px" Width="200px" />
+            </asp:Login>
         <p>&nbsp;</p>
         <p>Glemt passord osv...</p>
         <p></p>
