@@ -36,25 +36,25 @@ namespace Oving1
         {
             if (RB_Start.Checked)
             {
-                LabelStartDato.Text = Calendar1.SelectedDate.Date.ToLongDateString();
+                LabelStartDato.Text = Calendar1.SelectedDate.Date.ToShortDateString();
             }
             if (RB_Slutt.Checked)
             {
-                LabelSluttDato.Text = Calendar1.SelectedDate.Date.ToLongDateString();
+                LabelSluttDato.Text = Calendar1.SelectedDate.Date.ToShortDateString();
             }
-            /*if (LabelStartDato.Text.Length > 0 && LabelSluttDato.Text.Length > 0)
+            if (LabelStartDato.Text.Length > 0 && LabelSluttDato.Text.Length > 0)
             {
                 Date_Check();
-            } */ 
+            }  
         }
         
-        /* protected void Date_Check()
+         protected void Date_Check()
         {
-            if (Convert.ToDateTime(LabelStartDato) > Convert.ToDateTime(LabelSluttDato))
+            if ((Convert.ToDateTime(LabelStartDato.Text)) > (Convert.ToDateTime(LabelSluttDato.Text)))
             {
                 LabelMelding.Text = "Start dato kan ikke være før slutt dato!";
             }
-        } */
+        } 
     }
 
     
