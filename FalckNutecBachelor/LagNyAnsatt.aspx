@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <head>
-        <title>NyBruker</title>
+        <title>Ny Ansatt</title>
     </head>
 
     <form id="form1">
