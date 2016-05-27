@@ -178,7 +178,7 @@
     </div>
        <div>
            <p></p>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/LagNyBruker.aspx">LagNyBruker</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/LagNyAnsatt.aspx">LagNyBruker</asp:HyperLink>
            &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/LagNySeksjon.aspx">LagNySeksjon</asp:HyperLink>
            <p></p>
