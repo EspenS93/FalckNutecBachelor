@@ -222,6 +222,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LagNyAnsatt.aspx" />
+    <Content Include="LagNyAvtale.aspx" />
+    <Content Include="LagNyAvtaletype.aspx" />
+    <Content Include="LagNyBetalingsanmerkning.aspx" />
+    <Content Include="LagNyLeverandør.aspx" />
+    <Content Include="LagNyLokasjon.aspx" />
+    <Content Include="LagNyMemo.aspx" />
+    <Content Include="LagNyRolle.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
     <None Include="Properties\Settings.settings">
@@ -419,6 +426,55 @@
     </Compile>
     <Compile Include="LagNyAnsatt.aspx.designer.cs">
       <DependentUpon>LagNyAnsatt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyAvtale.aspx.cs">
+      <DependentUpon>LagNyAvtale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyAvtale.aspx.designer.cs">
+      <DependentUpon>LagNyAvtale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyAvtaletype.aspx.cs">
+      <DependentUpon>LagNyAvtaletype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyAvtaletype.aspx.designer.cs">
+      <DependentUpon>LagNyAvtaletype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyBetalingsanmerkning.aspx.cs">
+      <DependentUpon>LagNyBetalingsanmerkning.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyBetalingsanmerkning.aspx.designer.cs">
+      <DependentUpon>LagNyBetalingsanmerkning.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyLeverandør.aspx.cs">
+      <DependentUpon>LagNyLeverandør.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyLeverandør.aspx.designer.cs">
+      <DependentUpon>LagNyLeverandør.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyLokasjon.aspx.cs">
+      <DependentUpon>LagNyLokasjon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyLokasjon.aspx.designer.cs">
+      <DependentUpon>LagNyLokasjon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyMemo.aspx.cs">
+      <DependentUpon>LagNyMemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyMemo.aspx.designer.cs">
+      <DependentUpon>LagNyMemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyRolle.aspx.cs">
+      <DependentUpon>LagNyRolle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyRolle.aspx.designer.cs">
+      <DependentUpon>LagNyRolle.aspx</DependentUpon>
     </Compile>
     <Compile Include="LagNySeksjon.aspx.cs">
       <DependentUpon>LagNySeksjon.aspx</DependentUpon>

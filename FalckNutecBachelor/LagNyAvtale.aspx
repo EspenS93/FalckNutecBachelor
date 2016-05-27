@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyAvtale.aspx.cs" Inherits="FalckNutecBachelor.LagNyAvtale" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LagNyAvtale.aspx.cs" Inherits="FalckNutecBachelor.LagNyAvtale" %>
 
 <!DOCTYPE html>
 

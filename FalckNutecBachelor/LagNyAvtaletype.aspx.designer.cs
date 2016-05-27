@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FalckNutecBachelor
-{
-
-
-    public partial class LagNyAvtaletype
-    {
-
+namespace FalckNutecBachelor {
+    
+    
+    public partial class LagNyAvtaletype {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
