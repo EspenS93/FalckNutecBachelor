@@ -6,63 +6,47 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data.Odbc;
+using System.Drawing;
+using System.Data;
 
 namespace FalckNutecBachelor
 {
     public partial class LagNySeksjon : System.Web.UI.Page
-    {
+    {   //Trenger flere exceptions
+        SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {/*
             if (Page.IsPostBack == true)
             {
                 Label1.Text = ("Din data er nå sendt.");
             }*/
+            con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
+            "Initial Catalog = AvtaleDatabase;" +
+            "User Id=dbUser;" + "Password=Bachelor2016;");
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-
-            /*OdbcConnection con = new OdbcConnection();
-            con.ConnectionString = "Data Source=WIN-QT7KGL9HG25\\SQLEXPRESS;Database=AvtaleDatabase; User Id=dbUser; Password=Bachelor2016;";
-
+            SqlCommand ins = new SqlCommand("LagNySeksjon", con);
+            ins.CommandType = CommandType.StoredProcedure;
+            ins.Parameters.AddWithValue("@ID", TextBox1.Text);
+            ins.Parameters.AddWithValue("@Seksjon", TextBox2.Text);
             con.Open();
-
-
-            string sql = "insert into Seksjoner values(@SeksjonsID, @Seksjon)";
-            OdbcCommand cmd = new OdbcCommand(sql);
-            string SeksjonsID = TextBox1.Text;
-            string Seksjon = TextBox2.Text;
-            cmd.Connection = con;
-
-            cmd.CommandText = "insert into Seksjoner(SeksjonsID,Seksjon) values('" + SeksjonsID + "','" + Seksjon + "' )";
-
-            cmd.ExecuteNonQuery();
-
-
-            con.Close();
-
-
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-  
-            TextBox1.Focus();*/
-            
-            //Denne funker, men mangler exception catcher
-            SqlConnection con = new SqlConnection("");
-            con.ConnectionString = 
-            "Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
-            "Initial Catalog = AvtaleDatabase;" +
-            "User Id=dbUser;"+"Password=Bachelor2016;";
-
-            con.Open();
-
-            SqlCommand ins = new SqlCommand("INSERT INTO Seksjoner(ID, Seksjon) values(@SeksjonsID, @Seksjon)", con);
-
-            ins.Parameters.AddWithValue("@SeksjonsID", TextBox1.Text);
-            ins.Parameters.AddWithValue("@Seksjon", TextBox1.Text);
-
-            ins.ExecuteNonQuery();
+            try
+            {
+                ins.ExecuteNonQuery();
+            }
+            catch(SqlException sqlEX){
+                if (sqlEX.Message.StartsWith("Violation of PRIMARY KEY constraint"))
+                {
+                    Label1.Text = "*Invalid ID*";
+                    Label1.ForeColor = Color.Red;
+                    Label1.Visible = true;
+                }
+                else
+                    throw;
+            }
             con.Close();
             /*
             if (IsPostBack)
