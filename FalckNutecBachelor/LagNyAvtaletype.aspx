@@ -1,16 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LagNyAvtaletype.aspx.cs" Inherits="FalckNutecBachelor.LagNyAvtaletype" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyAvtaletype.aspx.cs" Inherits="FalckNutecBachelor.LagNyAvtaletype" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<head>
+    <title>Ny Avtaletype</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+    <form id="form1">
     <div>
-    
+    <h1>Ny Avtaletype</h1>
+        
+        Legg til avtaletype:
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+
+        <asp:Button ID="Button1" runat="server" Text="legg til avtaletype" />
+
     </div>
     </form>
-</body>
-</html>
+
+
+
+</asp:Content>
