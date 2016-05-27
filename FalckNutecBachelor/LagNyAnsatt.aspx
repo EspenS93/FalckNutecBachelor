@@ -53,6 +53,8 @@
 
         <p></p>
         <asp:Button ID="Button1" runat="server" Text="Lag Ny Bruker" OnClick="Button1_Click" />
+        <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
+
     </form>
 </asp:Content>
 

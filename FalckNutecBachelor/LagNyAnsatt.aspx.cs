@@ -34,6 +34,9 @@ namespace FalckNutecBachelor
             try
             {
                 ins.ExecuteNonQuery();
+                svar.Visible = true;
+                svar.Text = TextBox1.Text + " er lagt til";
+
             }
             catch (SqlException sqlEX)
             {

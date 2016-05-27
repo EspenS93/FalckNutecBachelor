@@ -36,13 +36,15 @@ namespace FalckNutecBachelor
             try
             {
                 ins.ExecuteNonQuery();
+                svar.Visible = true;
+                svar.Text = TextBox1.Text + " er lagt til";
             }
             catch(SqlException sqlEX){
                 if (sqlEX.Message.StartsWith("Violation of PRIMARY KEY constraint"))
                 {
-                    Label1.Text = "*Invalid ID*";
-                    Label1.ForeColor = Color.Red;
-                    Label1.Visible = true;
+                    svar.Text = "*Invalid ID*";
+                    svar.ForeColor = Color.Red;
+                    svar.Visible = true;
                 }
                 else
                     throw;

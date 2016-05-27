@@ -34,7 +34,7 @@ namespace Oving1
                 if (sqlEX.Message.StartsWith("saf"))
                 {
                     Login.FailureText = "Wrong Username or Password";
-                    System.Diagnostics.Debug.WriteLine(sqlEX.);
+                    //System.Diagnostics.Debug.WriteLine();
                 }
             }
             con.Close();
