@@ -228,7 +228,6 @@
     <Content Include="LagNyLeverandør.aspx" />
     <Content Include="LagNyLokasjon.aspx" />
     <Content Include="LagNyMemo.aspx" />
-    <Content Include="LagNyRolle.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
     <None Include="Properties\Settings.settings">
@@ -468,13 +467,6 @@
     </Compile>
     <Compile Include="LagNyMemo.aspx.designer.cs">
       <DependentUpon>LagNyMemo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LagNyRolle.aspx.cs">
-      <DependentUpon>LagNyRolle.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LagNyRolle.aspx.designer.cs">
-      <DependentUpon>LagNyRolle.aspx</DependentUpon>
     </Compile>
     <Compile Include="LagNySeksjon.aspx.cs">
       <DependentUpon>LagNySeksjon.aspx</DependentUpon>
