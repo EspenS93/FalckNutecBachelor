@@ -1,16 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LagNyLokasjon.aspx.cs" Inherits="FalckNutecBachelor.LagNyLokasjon" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyLokasjon.aspx.cs" Inherits="FalckNutecBachelor.LagNyLokasjon" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+
+<head>
+    <title>Ny Lokasjon</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+    <form id="form1">
     <div>
-    
+        <h1>Ny lokasjon</h1>
+        Skriv inn ny lokasjon her:
+        <asp:TextBox runat="server"></asp:TextBox>
+        <br />
+        <asp:Button runat="server" Text="Legg til lokasjon"></asp:Button>
     </div>
     </form>
-</body>
-</html>
+
+</asp:Content>

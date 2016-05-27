@@ -1,16 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LagNyLeverandør.aspx.cs" Inherits="FalckNutecBachelor.LagNyLeverandør" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyLeverandør.aspx.cs" Inherits="FalckNutecBachelor.LagNyLeverandør" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+
+<head>
+    <title>Ny Leverandør</title>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+    <form id="form1">
     <div>
-    
+    <h1> Ny leverandør </h1>
+
+       Legg til leverandør her: 
+    <asp:TextBox runat="server"></asp:TextBox>
+    <br />
+    <asp:Button runat="server" Text="Legg til leverandør"></asp:Button>
     </div>
     </form>
-</body>
-</html>
+
+</asp:Content>
