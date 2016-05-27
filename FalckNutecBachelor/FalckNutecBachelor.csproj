@@ -221,7 +221,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="LagNyBruker.aspx" />
+    <Content Include="LagNyAnsatt.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
     <None Include="Properties\Settings.settings">
@@ -413,12 +413,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="LagNyBruker.aspx.cs">
-      <DependentUpon>LagNyBruker.aspx</DependentUpon>
+    <Compile Include="LagNyAnsatt.aspx.cs">
+      <DependentUpon>LagNyAnsatt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LagNyBruker.aspx.designer.cs">
-      <DependentUpon>LagNyBruker.aspx</DependentUpon>
+    <Compile Include="LagNyAnsatt.aspx.designer.cs">
+      <DependentUpon>LagNyAnsatt.aspx</DependentUpon>
     </Compile>
     <Compile Include="LagNySeksjon.aspx.cs">
       <DependentUpon>LagNySeksjon.aspx</DependentUpon>
