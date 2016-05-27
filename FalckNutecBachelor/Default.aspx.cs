@@ -26,15 +26,17 @@ namespace Oving1
             try
             {
                 Auth.ExecuteNonQuery();
+                e.Authenticated = true;
+
             }
-            catch(SqlException sqlEX)
+            catch (SqlException sqlEX)
             {
                 if (sqlEX.Message.StartsWith("saf"))
                 {
                     Login.FailureText = "Wrong Username or Password";
+                    System.Diagnostics.Debug.WriteLine(sqlEX.);
                 }
             }
-            e.Authenticated = true;
             con.Close();
         }
     }
