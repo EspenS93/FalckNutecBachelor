@@ -30,15 +30,5 @@
         <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource3"></asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtalerOgPDF" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
     </div>
-       <div>
-           <p></p>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/LagNyAnsatt.aspx">LagNyBruker</asp:HyperLink>
-           &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/LagNySeksjon.aspx">LagNySeksjon</asp:HyperLink>
-           <p></p>
-        </div>
-        <div>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Hjem</asp:HyperLink>
-        </div>
     </form>
 </asp:Content>
