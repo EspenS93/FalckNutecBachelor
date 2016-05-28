@@ -230,6 +230,7 @@
     <Content Include="LagNyMemo.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
+    <Content Include="LagNyKategori.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -517,6 +518,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyKategori.aspx.cs">
+      <DependentUpon>LagNyKategori.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyKategori.aspx.designer.cs">
+      <DependentUpon>LagNyKategori.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

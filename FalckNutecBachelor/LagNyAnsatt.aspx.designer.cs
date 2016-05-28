@@ -10,7 +10,7 @@
 namespace FalckNutecBachelor {
     
     
-    public partial class LagNyBruker {
+    public partial class LagNyAnsatt {
         
         /// <summary>
         /// TextBox1 control.
