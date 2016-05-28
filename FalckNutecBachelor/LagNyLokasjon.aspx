@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyLokasjon.aspx.cs" Inherits="FalckNutecBachelor.LagNyLokasjon" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyLokasjon.aspx.cs" Inherits="FalckNutecBachelor.LagNyLokasjon" EnableEventValidation="false"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -10,10 +10,12 @@
     <form id="form1">
     <div>
         <h1>Ny lokasjon</h1>
-        Skriv inn ny lokasjon her:
-        <asp:TextBox runat="server"></asp:TextBox>
+        <p>Skriv inn ny lokasjon her:
+        <asp:TextBox ID="LokasjonText" runat="server"></asp:TextBox>
+        </p>
+        <asp:Button ID="SubmitKnapp" runat="server" Text="Legg til lokasjon" OnClick="SubmitKnapp_Click"></asp:Button>
         <br />
-        <asp:Button runat="server" Text="Legg til lokasjon"></asp:Button>
+        <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
     </div>
     </form>
 
