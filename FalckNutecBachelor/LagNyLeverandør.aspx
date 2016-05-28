@@ -17,27 +17,27 @@
             <asp:DropDownList ID="ULevDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="Navn"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
             <br />
-            <p>Organisasjonsnr:</p>
+            <p>Organisasjonsnr:
             <asp:TextBox ID="OrgNrText" runat="server"></asp:TextBox>
-            <br />
-            <p>Adresse:</p>
+            </p>
+            <p>Adresse:
             <asp:TextBox ID="AdresseText" runat="server"></asp:TextBox>
-            <br />
-            <p>Postadresse:</p>
+            </p>
+            <p>Postadresse:
             <asp:TextBox ID="PostText" runat="server"></asp:TextBox>
-            <br />
-            <p>Kontaktperson:</p>
+            </p>
+            <p>Kontaktperson:
             <asp:TextBox ID="KontaktText" runat="server"></asp:TextBox>
-            <br />
-            <p>Telefonnr:</p>
+            </p>
+            <p>Telefonnr:
             <asp:TextBox ID="TLFText" runat="server"></asp:TextBox>
-            <br />
-            <p>Telefaks:</p>
+            </p>
+            <p>Telefaks:
             <asp:TextBox ID="FaxText" runat="server"></asp:TextBox>
-            <br />
-            <p>Epost:</p>
+            </p>
+            <p>Epost:
             <asp:TextBox ID="EpostText" runat="server"></asp:TextBox>
-            <br />
+            </p>
             <asp:Button ID="SubmitKnapp" runat="server" Text="Legg til leverandør" OnClick="SubmitKnapp_Click"></asp:Button>
             <br />
             <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
