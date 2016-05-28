@@ -23,7 +23,7 @@
         <asp:ListItem Value="LagNyMemo">Memo</asp:ListItem>
         <asp:ListItem Value="LagNySeksjon">Seksjon</asp:ListItem>
        </asp:DropDownList>
-        <asp:Button ID="Button1" runat="server" Text="Avtaler" OnClick="Button1_Click"  />
+        <asp:Button ID="Button1" runat="server" Text="Gå til" OnClick="Button1_Click" />
 
         <h3>Rapporter</h3>
         <p>
