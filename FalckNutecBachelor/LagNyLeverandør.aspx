@@ -10,13 +10,13 @@
     <form id="form1">
         <div>
             <h1>Ny leverandør </h1>
-            <p>Navn:</p>
+            <p>Navn:
             <asp:TextBox ID="NavnText" runat="server"></asp:TextBox>
-            <br />
-            <p>Underleverandør:</p>
+            </p>
+            <p>Underleverandør:
             <asp:DropDownList ID="ULevDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="Navn"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
-            <br />
+            </p>
             <p>Organisasjonsnr:
             <asp:TextBox ID="OrgNrText" runat="server"></asp:TextBox>
             </p>
