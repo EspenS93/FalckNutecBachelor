@@ -21,7 +21,7 @@ namespace FalckNutecBachelor
 
         protected void SubmitKnapp_Click(object sender, EventArgs e)
         {
-            SqlCommand ins = new SqlCommand("LagNyLeverandør", con);
+            SqlCommand ins = new SqlCommand("LagNyLokasjon", con);
             ins.CommandType = CommandType.StoredProcedure;
             ins.Parameters.AddWithValue("@Lokasjon", LokasjonText.Text);
             con.Open();
