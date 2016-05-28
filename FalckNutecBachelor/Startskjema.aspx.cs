@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Oving1
+namespace FalckNutecBachelor
 {
     public partial class Startskjema : System.Web.UI.Page
     {
@@ -16,7 +16,6 @@ namespace Oving1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-        
         }
     }
 }
