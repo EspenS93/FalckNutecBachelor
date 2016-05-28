@@ -12,6 +12,7 @@
         <p>SeksjonsID: <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> </p>
         <p>Navn: <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></p>
         <asp:Button ID="Button1" runat="server" Text="Lag ny Seksjon" OnClick="Button1_Click" />
+        <br />
         <asp:TextBox ID="svar" runat="server" Visible="false"></asp:TextBox>
     </div>
     </form>

@@ -27,6 +27,7 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
             <br /><br />
             <asp:Button ID="Button1" runat="server" Text="legg til avtaletype" />
+            <br />
             <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
         </div>
     </form>

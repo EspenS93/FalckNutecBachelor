@@ -39,6 +39,7 @@
             <asp:TextBox ID="EpostText" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="SubmitKnapp" runat="server" Text="Legg til leverandør" OnClick="SubmitKnapp_Click"></asp:Button>
+            <br />
             <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
         </div>
     </form>
