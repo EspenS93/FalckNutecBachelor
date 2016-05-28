@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -39,10 +40,16 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Ansatt", DropDownList7.Text);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
 
-            SqlCommand ins2 = new SqlCommand("LeggInnPDF", con);
+            //PDF
+            Stream fs = pdf.PostedFile.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+            SqlCommand ins2 = new SqlCommand("LeggTilPDF", con);
             ins2.CommandType = CommandType.StoredProcedure;
-            ins2.Parameters.AddWithValue("@Navn",NavnText.Text);
-            ins2.Parameters.AddWithValue("@Fil",pdf.PostedFile);
+            ins2.Parameters.AddWithValue("@AvtaleNavn", NavnText.Text);
+            ins2.Parameters.AddWithValue("@Fil",bytes);
+            ins2.Parameters.AddWithValue("@PDFNavn", Path.GetFileName(pdf.PostedFile.FileName));
             con.Open();
             try
             {
@@ -61,5 +68,6 @@ namespace FalckNutecBachelor
 
             con.Close();
         }
+
     }
 }
