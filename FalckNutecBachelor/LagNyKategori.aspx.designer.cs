@@ -10,25 +10,25 @@
 namespace FalckNutecBachelor {
     
     
-    public partial class LagNyLokasjon {
+    public partial class LagNyKategori {
         
         /// <summary>
-        /// LokasjonText control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LokasjonText;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// SubmitKnapp control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitKnapp;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// svar control.
