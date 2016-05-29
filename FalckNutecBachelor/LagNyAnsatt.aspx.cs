@@ -28,9 +28,10 @@ namespace FalckNutecBachelor
         {
             SqlCommand ins = new SqlCommand("LagNyAnsatt",con);
             ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@Fornavn", TextBox1.Text);
-            ins.Parameters.AddWithValue("@Etternavn", TextBox2.Text);
-            ins.Parameters.AddWithValue("@Mail", TextBox3.Text);
+            ins.Parameters.AddWithValue("@NOnr", TextBox1.Text);
+            ins.Parameters.AddWithValue("@Fornavn", TextBox2.Text);
+            ins.Parameters.AddWithValue("@Etternavn", TextBox3.Text);
+            ins.Parameters.AddWithValue("@Mail", TextBox4.Text);
             ins.Parameters.AddWithValue("@Vara1", DropDownList1.Text);
             ins.Parameters.AddWithValue("@Vara2", DropDownList2.Text);
             ins.Parameters.AddWithValue("@Rolle", DropDownList3.Text);

@@ -9,18 +9,21 @@
     <form id="form1">
 
         <h1>Ny Ansatt</h1>
-        <p>//Skal kunne lage nye og redigere eksisterende brukere gjennom Admin</p>
         <p>
-            Fornavn:
+            NOnr:
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </p>
         <p>
-            Etternavn:
+            Fornavn:
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         </p>
         <p>
-            Email:
+            Etternavn:
                 <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Email:
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator runat=server display=dynamic
             ControlToValidate="TextBox3" 
             ErrorMessage="Password must contain one of @."

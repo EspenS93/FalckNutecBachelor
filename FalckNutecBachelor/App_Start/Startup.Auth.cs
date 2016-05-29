@@ -8,14 +8,19 @@ using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using FalckNutecBachelor.Models;
-
+using WebMatrix.WebData;
+using System.Data.SqlClient;
 namespace FalckNutecBachelor
 {
     public partial class Startup {
-
+        
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
         public void ConfigureAuth(IAppBuilder app)
         {
+            SqlConnection con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
+           "Initial Catalog = AvtaleDatabase;" +
+           "User Id=dbUser;" + "Password=Bachelor2016;");
+            WebSecurity.InitializeDatabaseConnection("AvtaleDatabaseConnectionString2", "Ansatte","ID","NOnr",true);
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);

@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebMatrix;
+using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
@@ -52,6 +54,7 @@ namespace FalckNutecBachelor
                 Login1.FailureText = "Username and/or password is incorrect.";
             }
             else {
+                WebSecurity.Login(Login1.UserName, Login1.Password, Login1.RememberMeSet);
                 Session["Username"] = Login1.UserName;
                 if (Login1.UserName == "admin")
                 {
