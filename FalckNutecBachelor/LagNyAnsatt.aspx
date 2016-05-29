@@ -8,7 +8,7 @@
 
     <form id="form1">
 
-        <h1>Ny Bruker</h1>
+        <h1>Ny Ansatt</h1>
         <p>//Skal kunne lage nye og redigere eksisterende brukere gjennom Admin</p>
         <p>
             Fornavn:

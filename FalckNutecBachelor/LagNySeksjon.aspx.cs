@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data.Odbc;
 using System.Drawing;
 using System.Data;
+using System.Web.Security;
 
 namespace FalckNutecBachelor
 {
@@ -20,6 +21,10 @@ namespace FalckNutecBachelor
             {
                 Label1.Text = ("Din data er nå sendt.");
             }*/
+            if (Session["username"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
             "User Id=dbUser;" + "Password=Bachelor2016;");

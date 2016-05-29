@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace FalckNutecBachelor
 {
-    public partial class LagNyAnsatt : System.Web.UI.Page
+    public partial class LagNyBruker : System.Web.UI.Page
     {
         //Mangler exceptions
         SqlConnection con;
@@ -26,15 +26,11 @@ namespace FalckNutecBachelor
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlCommand ins = new SqlCommand("LagNyAnsatt",con);
+            SqlCommand ins = new SqlCommand("LagNyBruker",con);
             ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@Fornavn", TextBox1.Text);
-            ins.Parameters.AddWithValue("@Etternavn", TextBox2.Text);
-            ins.Parameters.AddWithValue("@Mail", TextBox3.Text);
-            ins.Parameters.AddWithValue("@Vara1", DropDownList1.Text);
-            ins.Parameters.AddWithValue("@Vara2", DropDownList2.Text);
-            ins.Parameters.AddWithValue("@Rolle", DropDownList3.Text);
-            ins.Parameters.AddWithValue("@Seksjon", DropDownList4.Text);
+            ins.Parameters.AddWithValue("@NOnr", TextBox1.Text);
+            ins.Parameters.AddWithValue("@Passord", TextBox2.Text);
+            ins.Parameters.AddWithValue("@AnsattNavn", DropDownList1.Text);
             con.Open();
             try
             {
