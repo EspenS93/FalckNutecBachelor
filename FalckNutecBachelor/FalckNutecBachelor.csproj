@@ -320,6 +320,9 @@
     <Content Include="AdminSkjema.aspx" />
     <Content Include="Startskjema.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VisAvtale.aspx" />
+    <Content Include="VisFinansieringsselskap.aspx" />
+    <Content Include="VisLeverandør.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -590,6 +593,27 @@
     </Compile>
     <Compile Include="LagNyKategori.aspx.designer.cs">
       <DependentUpon>LagNyKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisAvtale.aspx.cs">
+      <DependentUpon>VisAvtale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisAvtale.aspx.designer.cs">
+      <DependentUpon>VisAvtale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisFinansieringsselskap.aspx.cs">
+      <DependentUpon>VisFinansieringsselskap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisFinansieringsselskap.aspx.designer.cs">
+      <DependentUpon>VisFinansieringsselskap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisLeverandør.aspx.cs">
+      <DependentUpon>VisLeverandør.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisLeverandør.aspx.designer.cs">
+      <DependentUpon>VisLeverandør.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
