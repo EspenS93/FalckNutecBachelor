@@ -12,10 +12,12 @@
         <p>//Skal kunne lage nye og redigere eksisterende brukere gjennom Admin</p>
         <p>
             NOnr:
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOnr" DataValueField="NOnr">
+                </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>"  SelectCommand="SELECT [NOnr] FROM [Ansatte]"></asp:SqlDataSource>
         </p>
         <p>
-            Passord:
+            Passord:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <asp:CompareValidator ID="CompareValidator1" runat="server"
                 ControlToValidate="TextBox2"
@@ -31,7 +33,7 @@
             </asp:RequiredFieldValidator>
         </p>
         <p>
-            Gjenta Passord:
+            Gjenta Passord:&nbsp;
                 <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                 ErrorMessage="&laquo; (Required)"
@@ -40,13 +42,6 @@
                 ToolTip="Compare Password is a REQUIRED field">
             </asp:RequiredFieldValidator>
         </p>
-        <p>
-            Ansatt:
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Fornavn" DataValueField="Fornavn">
-                </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Fornavn] FROM [Ansatte]"></asp:SqlDataSource>
-        </p>
-        <p></p>
         <asp:Button ID="Button1" runat="server" Text="Lag Ny Bruker" OnClick="Button1_Click" />
         <br />
         <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>

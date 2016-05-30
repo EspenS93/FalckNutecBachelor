@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
@@ -15,9 +16,17 @@ namespace FalckNutecBachelor
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null)
+            if (!WebSecurity.IsAuthenticated)
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("Login");
+            }
+            else
+            {
+                if (!Roles.IsUserInRole("Admin"))
+                {
+                    //ACCESS DENIED SIDE
+                    Response.Redirect("Startskjema");
+                }
             }
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +

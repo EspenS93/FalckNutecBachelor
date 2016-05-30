@@ -16,11 +16,10 @@ namespace FalckNutecBachelor
     {
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
-        {
-            
-            if(Session["username"] != null)
+        { 
+            if(WebSecurity.IsAuthenticated)
             {
-                if (Session["username"] == "admin")
+                if (Roles.IsUserInRole("Admin"))
                 {
                     Response.Redirect("AdminSkjema.aspx");
                 }
@@ -37,34 +36,21 @@ namespace FalckNutecBachelor
 
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            e.Authenticated = false;
-            int valid = 0;
-            using (SqlCommand cmd = new SqlCommand("Validate_User", con))
+            if(WebSecurity.Login(Login1.UserName, Login1.Password, Login1.RememberMeSet))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@NOnr", Login1.UserName);
-                cmd.Parameters.AddWithValue("@Passord", Login1.Password);
-                cmd.Connection = con;
-                con.Open();
-                valid = Convert.ToInt32(cmd.ExecuteScalar());
-                con.Close();
-            }
-            if (valid == -1)
-            {
-                Login1.FailureText = "Username and/or password is incorrect.";
-            }
-            else {
-                WebSecurity.Login(Login1.UserName, Login1.Password, Login1.RememberMeSet);
-                Session["Username"] = Login1.UserName;
-                if (Login1.UserName == "admin")
+                if(Roles.IsUserInRole("Admin"))
                 {
                     Response.Redirect("AdminSkjema.aspx");
-
-                }
-                else {
+                }else
+                {
                     Response.Redirect("Startskjema.aspx");
                 }
             }
+            else
+            {
+                Login1.FailureText = "Username and/or password is incorrect.";
+            }
+           
         }
     }
 }

@@ -14,18 +14,44 @@
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </p>
         <p>
-            Fornavn:
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            Passord:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox ID="TextBox2" TextMode="Password" runat="server"></asp:TextBox>
+            <asp:CompareValidator ID="CompareValidator1" runat="server"
+                ControlToValidate="TextBox2"
+                CssClass="ValidationError"
+                ControlToCompare="TextBox6"
+                ErrorMessage="No Match"
+                ToolTip="Password must be the same" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                ErrorMessage="&laquo; (Required)"
+                ControlToValidate="TextBox2"
+                CssClass="ValidationError"
+                ToolTip="Compare Password is a REQUIRED field">
+            </asp:RequiredFieldValidator>
         </p>
         <p>
-            Etternavn:
+            Gjenta Passord:&nbsp;
+                <asp:TextBox ID="TextBox6" TextMode="Password" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                ErrorMessage="&laquo; (Required)"
+                ControlToValidate="TextBox6"
+                CssClass="ValidationError"
+                ToolTip="Compare Password is a REQUIRED field">
+            </asp:RequiredFieldValidator>
+        </p>
+        <p>
+            Fornavn:
                 <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </p>
         <p>
-            Email:
+            Etternavn:
                 <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Email:
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator runat=server display=dynamic
-            ControlToValidate="TextBox3" 
+            ControlToValidate="TextBox5" 
             ErrorMessage="Password must contain one of @."
             ValidationExpression=".*[@].*" />
         </p>
@@ -43,9 +69,9 @@
 
         <p>
             Rolle:
-                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="Rolle" DataValueField="Rolle">
+                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="RoleName" DataValueField="RoleName">
                 </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Rolle] FROM [Rolle]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [RoleName] FROM [webpages_Roles]"></asp:SqlDataSource>
         </p>
         <p>
             Seksjon:

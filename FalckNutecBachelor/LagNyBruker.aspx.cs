@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
@@ -16,9 +17,17 @@ namespace FalckNutecBachelor
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null)
+            if (!WebSecurity.IsAuthenticated)
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("Login");
+            }
+            else
+            {
+                if (!Roles.IsUserInRole("Admin"))
+                {
+                    //ACCESS DENIED SIDE
+                    Response.Redirect("Startskjema");
+                }
             }
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
@@ -26,17 +35,13 @@ namespace FalckNutecBachelor
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlCommand ins = new SqlCommand("LagNyBruker",con);
-            ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@NOnr", TextBox1.Text);
-            ins.Parameters.AddWithValue("@Passord", TextBox2.Text);
-            ins.Parameters.AddWithValue("@AnsattNavn", DropDownList1.Text);
-            con.Open();
             try
             {
-                ins.ExecuteNonQuery();
+                WebSecurity.CreateAccount(DropDownList1.Text, TextBox2.Text, false);
                 svar.Visible = true;
-                svar.Text = TextBox1.Text + " er lagt til";
+                svar.Text = DropDownList1.Text + " er lagt til";
+                WebSecurity.CreateAccount(DropDownList1.Text, TextBox2.Text, false);
+
 
             }
             catch (SqlException sqlEX)

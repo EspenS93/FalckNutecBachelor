@@ -9,6 +9,7 @@ using System.Data.Odbc;
 using System.Drawing;
 using System.Data;
 using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
@@ -21,9 +22,17 @@ namespace FalckNutecBachelor
             {
                 Label1.Text = ("Din data er nå sendt.");
             }*/
-            if (Session["username"] == null)
+            if (!WebSecurity.IsAuthenticated)
             {
-                Response.Redirect("login.aspx");
+                Response.Redirect("Login");
+            }
+            else
+            {
+                if (!Roles.IsUserInRole("Admin"))
+                {
+                    //ACCESS DENIED SIDE
+                    Response.Redirect("Startskjema");
+                }
             }
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +

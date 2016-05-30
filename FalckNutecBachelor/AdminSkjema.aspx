@@ -12,7 +12,7 @@
         <div>
             <p>Lag ny</p>
             <p>
-                <asp:DropDownList ID="LagNyListe" runat="server">
+                <asp:DropDownList ID="LagNyListe" runat="server" OnSelectedIndexChanged="LagNyListe_SelectedIndexChanged">
                     <asp:ListItem Value="LagNyAnsatt">Ansatt</asp:ListItem>
                     <asp:ListItem Value="LagNyAvtale">Avtale</asp:ListItem>
                     <asp:ListItem Value="LagNyAvtaleType">AvtaleType</asp:ListItem>
