@@ -99,7 +99,7 @@
            
         </asp:FormView>
 
-        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn], [Adresse], [Postnr], [Poststed], [Kontaktperson], [Telefonnr], [Telefaks], [Epost] FROM [Finansieringsselskap]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn], [Adresse], [Postnr], [Poststed], [Kontaktperson], [Telefonnr], [Telefaks], [Epost] FROM [Finansieringsselskap]"></asp:SqlDataSource>
             </div>
     </div>
     <div class="links">

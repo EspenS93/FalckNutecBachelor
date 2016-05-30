@@ -26,14 +26,13 @@ namespace FalckNutecBachelor
             }
             }
         }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Button1.PostBackUrl = "~/"+LagNyListe.SelectedValue+".aspx";
-        }
-
         protected void LagNyListe_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Button1.PostBackUrl = "~/" + LagNyListe.SelectedValue + ".aspx";
+            LagNyButton.PostBackUrl =LagNyListe.SelectedValue + ".aspx";
+        }
+        protected void VisListe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VisButton.PostBackUrl =LagNyListe.SelectedValue+".aspx";
         }
     }
 }

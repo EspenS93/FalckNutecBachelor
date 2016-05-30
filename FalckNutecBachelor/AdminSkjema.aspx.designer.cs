@@ -13,6 +13,15 @@ namespace FalckNutecBachelor {
     public partial class AdminSkjema {
         
         /// <summary>
+        /// WelcomeText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WelcomeText;
+        
+        /// <summary>
         /// LagNyListe control.
         /// </summary>
         /// <remarks>
@@ -22,22 +31,31 @@ namespace FalckNutecBachelor {
         protected global::System.Web.UI.WebControls.DropDownList LagNyListe;
         
         /// <summary>
-        /// Button1 control.
+        /// LagNyButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button LagNyButton;
         
         /// <summary>
-        /// WelcomeText control.
+        /// VisListe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WelcomeText;
+        protected global::System.Web.UI.WebControls.DropDownList VisListe;
+        
+        /// <summary>
+        /// VisButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button VisButton;
         
         /// <summary>
         /// avtaler2 control.
