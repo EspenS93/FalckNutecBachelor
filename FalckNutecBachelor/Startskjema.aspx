@@ -10,6 +10,7 @@
     <form id="form1">
         <h1>Startskjema</h1>
         <div>
+            <asp:Label ID="test" runat="server"></asp:Label>
             <p>Velg registeringsskjema</p>
             <p>
                 <asp:Button ID="Button1" runat="server" Text="Avtaler" OnClick="Button1_Click" />
