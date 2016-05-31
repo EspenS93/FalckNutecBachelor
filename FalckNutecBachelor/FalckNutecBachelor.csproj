@@ -323,6 +323,7 @@
     <Content Include="AdminSkjema.aspx" />
     <Content Include="Startskjema.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="AdministrereBruker.aspx" />
     <Content Include="VisAvtale.aspx" />
     <Content Include="VisFinansieringsselskap.aspx" />
     <Content Include="VisLeverandør.aspx" />
@@ -617,6 +618,13 @@
     </Compile>
     <Compile Include="LagNyKategori.aspx.designer.cs">
       <DependentUpon>LagNyKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrereBruker.aspx.cs">
+      <DependentUpon>AdministrereBruker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrereBruker.aspx.designer.cs">
+      <DependentUpon>AdministrereBruker.aspx</DependentUpon>
     </Compile>
     <Compile Include="VisAvtale.aspx.cs">
       <DependentUpon>VisAvtale.aspx</DependentUpon>
