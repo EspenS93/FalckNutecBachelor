@@ -3,103 +3,51 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
-        <h1>&nbsp;</h1>
-        <h1>Oversikt over finansieringsselskaper</h1>
-        <p>Velg Finansieringsselskap</p>
-
-
-
+        <h1>Finansieringsselskap</h1>
         <div>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="Navn" AutoPostBack="True" >
-            </asp:DropDownList>
-        <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1"  >
-            <EditItemTemplate>
-                Navn:
-                <asp:TextBox ID="NavnTextBox" runat="server" Text='<%# Bind("Navn") %>' />
-                <br />
-                Adresse:
-                <asp:TextBox ID="AdresseTextBox" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Postnr:
-                <asp:TextBox ID="PostnrTextBox" runat="server" Text='<%# Bind("Postnr") %>' />
-                <br />
-                Poststed:
-                <asp:TextBox ID="PoststedTextBox" runat="server" Text='<%# Bind("Poststed") %>' />
-                <br />
-                Kontaktperson:
-                <asp:TextBox ID="KontaktpersonTextBox" runat="server" Text='<%# Bind("Kontaktperson") %>' />
-                <br />
-                Telefonnr:
-                <asp:TextBox ID="TelefonnrTextBox" runat="server" Text='<%# Bind("Telefonnr") %>' />
-                <br />
-                Telefaks:
-                <asp:TextBox ID="TelefaksTextBox" runat="server" Text='<%# Bind("Telefaks") %>' />
-                <br />
-                Epost:
-                <asp:TextBox ID="EpostTextBox" runat="server" Text='<%# Bind("Epost") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </EditItemTemplate>
-            <InsertItemTemplate>
-                Navn:
-                <asp:TextBox ID="NavnTextBox" runat="server" Text='<%# Bind("Navn") %>' />
-                <br />
-                Adresse:
-                <asp:TextBox ID="AdresseTextBox" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Postnr:
-                <asp:TextBox ID="PostnrTextBox" runat="server" Text='<%# Bind("Postnr") %>' />
-                <br />
-                Poststed:
-                <asp:TextBox ID="PoststedTextBox" runat="server" Text='<%# Bind("Poststed") %>' />
-                <br />
-                Kontaktperson:
-                <asp:TextBox ID="KontaktpersonTextBox" runat="server" Text='<%# Bind("Kontaktperson") %>' />
-                <br />
-                Telefonnr:
-                <asp:TextBox ID="TelefonnrTextBox" runat="server" Text='<%# Bind("Telefonnr") %>' />
-                <br />
-                Telefaks:
-                <asp:TextBox ID="TelefaksTextBox" runat="server" Text='<%# Bind("Telefaks") %>' />
-                <br />
-                Epost:
-                <asp:TextBox ID="EpostTextBox" runat="server" Text='<%# Bind("Epost") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </InsertItemTemplate>
-            <ItemTemplate>
-                Navn:
-                <asp:Label ID="NavnLabel" runat="server" Text='<%# Bind("Navn") %>' />
-                <br />
-                Adresse:
-                <asp:Label ID="AdresseLabel" runat="server" Text='<%# Bind("Adresse") %>' />
-                <br />
-                Postnr:
-                <asp:Label ID="PostnrLabel" runat="server" Text='<%# Bind("Postnr") %>' />
-                <br />
-                Poststed:
-                <asp:Label ID="PoststedLabel" runat="server" Text='<%# Bind("Poststed") %>' />
-                <br />
-                Kontaktperson:
-                <asp:Label ID="KontaktpersonLabel" runat="server" Text='<%# Bind("Kontaktperson") %>' />
-                <br />
-                Telefonnr:
-                <asp:Label ID="TelefonnrLabel" runat="server" Text='<%# Bind("Telefonnr") %>' />
-                <br />
-                Telefaks:
-                <asp:Label ID="TelefaksLabel" runat="server" Text='<%# Bind("Telefaks") %>' />
-                <br />
-                Epost:
-                <asp:Label ID="EpostLabel" runat="server" Text='<%# Bind("Epost") %>' />
-                <br />
+         
+        
 
-            </ItemTemplate>
-           
-        </asp:FormView>
+            <asp:DataList ID="DataList1" runat="server" DataKeyField="ID" DataSourceID="SqlDataSource1">
+                <ItemTemplate>
+                    ID:
+                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+                    <br />
+                    Navn:
+                    <asp:Label ID="NavnLabel" runat="server" Text='<%# Eval("Navn") %>' />
+                    <br />
+                    Adresse:
+                    <asp:Label ID="AdresseLabel" runat="server" Text='<%# Eval("Adresse") %>' />
+                    <br />
+                    Postnr:
+                    <asp:Label ID="PostnrLabel" runat="server" Text='<%# Eval("Postnr") %>' />
+                    <br />
+                    Poststed:
+                    <asp:Label ID="PoststedLabel" runat="server" Text='<%# Eval("Poststed") %>' />
+                    <br />
+                    Kontaktperson:
+                    <asp:Label ID="KontaktpersonLabel" runat="server" Text='<%# Eval("Kontaktperson") %>' />
+                    <br />
+                    Telefonnr:
+                    <asp:Label ID="TelefonnrLabel" runat="server" Text='<%# Eval("Telefonnr") %>' />
+                    <br />
+                    Telefaks:
+                    <asp:Label ID="TelefaksLabel" runat="server" Text='<%# Eval("Telefaks") %>' />
+                    <br />
+                    Epost:
+                    <asp:Label ID="EpostLabel" runat="server" Text='<%# Eval("Epost") %>' />
+                    <br />
+                    <br />
+                </ItemTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentEtFinansieringsselskap" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="FinansieringsselskapID" QueryStringField="FinansieringsselskapID" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+         
+        
 
-        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn], [Adresse], [Postnr], [Poststed], [Kontaktperson], [Telefonnr], [Telefaks], [Epost] FROM [Finansieringsselskap]"></asp:SqlDataSource>
             </div>
     </div>
     <div class="links">
