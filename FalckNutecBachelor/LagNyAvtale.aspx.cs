@@ -15,7 +15,8 @@ namespace FalckNutecBachelor
 	public partial class LagNyAvtale : System.Web.UI.Page
 	{
             //Mangler exceptions
-            SqlConnection con;
+        SqlConnection con;
+        String dato;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!WebSecurity.IsAuthenticated)
@@ -25,6 +26,18 @@ namespace FalckNutecBachelor
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
             "User Id=dbUser;" + "Password=Bachelor2016;");
+            
+        }
+        protected void KalenderTrykk(object sender, EventArgs e)
+        {
+            if (dato=="Start")
+            {
+                StartDatoText.Text = Calendar1.SelectedDate.ToString();
+            }else
+            {
+                SluttDatoText.Text = Calendar1.SelectedDate.ToString();
+            }
+            Calendar1.Visible = false;
         }
         protected void SubmitKnapp_Click(object sender, EventArgs e)
         {
@@ -72,5 +85,15 @@ namespace FalckNutecBachelor
             con.Close();
         }
 
+        protected void KalenderKnapp_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = true;
+            dato = "Start";
+        }
+        protected void KalenderKnapp2_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = true;
+            dato = "Slutt";
+        }
     }
 }

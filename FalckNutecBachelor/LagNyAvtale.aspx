@@ -39,7 +39,7 @@
               </p>
             <p>
             Seksjon:
-                <asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource7" DataTextField="Seksjon" DataValueField="Seksjon" OnSelectedIndexChanged="DropDownList7_SelectedIndexChanged">
+                <asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource7" DataTextField="Seksjon" DataValueField="Seksjon">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Seksjon] FROM [Seksjoner]"></asp:SqlDataSource>
               </p>
@@ -58,9 +58,17 @@
             </p>
             <p>
                 StartDato:
-            <asp:TextBox ID="StartDatoText" runat="server" TextMode="Date" ></asp:TextBox> 
+            <asp:TextBox ID="StartDatoText" runat="server" TextMode="Date"></asp:TextBox> <asp:ImageButton ID="KalenderKnapp" runat="server" OnClick="KalenderKnapp_Click" ImageUrl="~/calendar_blank.png" />
                 &nbsp;SluttDato:
-            <asp:TextBox ID="SluttDatoText" runat="server" TextMode="Date"></asp:TextBox>
+            <asp:TextBox ID="SluttDatoText" runat="server" TextMode="Date"></asp:TextBox><asp:ImageButton ID="KalenderKnapp2" runat="server" OnClick="KalenderKnapp2_Click" ImageUrl="~/calendar_blank.png" />
+            <asp:Calendar ID="Calendar1" Visible="false" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" OnSelectionChanged="KalenderTrykk">
+                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#999999" />
+                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                <TodayDayStyle BackColor="#CCCCCC" />
+            </asp:Calendar>      
             </p>
             <p>Status:
                 <asp:DropDownList ID="StatusList" runat="server">
@@ -72,14 +80,6 @@
             <p>Autoforny
             <asp:CheckBox ID="CheckBox1" runat="server" />
             </p>
-            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
-                <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-                <OtherMonthDayStyle ForeColor="#999999" />
-                <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                <TodayDayStyle BackColor="#CCCCCC" />
-            </asp:Calendar>      
             <br /><br /><br />
            <p>PDF: <asp:FileUpload ID="pdf" runat="server" AllowMultiple="true"  />
             </p>

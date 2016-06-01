@@ -157,6 +157,15 @@ namespace FalckNutecBachelor {
         protected global::System.Web.UI.WebControls.TextBox StartDatoText;
         
         /// <summary>
+        /// KalenderKnapp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton KalenderKnapp;
+        
+        /// <summary>
         /// SluttDatoText control.
         /// </summary>
         /// <remarks>
@@ -164,6 +173,24 @@ namespace FalckNutecBachelor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SluttDatoText;
+        
+        /// <summary>
+        /// KalenderKnapp2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton KalenderKnapp2;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// StatusList control.
@@ -182,15 +209,6 @@ namespace FalckNutecBachelor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-        
-        /// <summary>
-        /// Calendar1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// pdf control.
