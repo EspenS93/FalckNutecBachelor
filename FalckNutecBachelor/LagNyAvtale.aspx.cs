@@ -30,17 +30,15 @@ namespace FalckNutecBachelor
         {
             SqlCommand ins = new SqlCommand("LagNyAvtale", con);
             ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@navn", NavnText.Text);
-            ins.Parameters.AddWithValue("@Arkivreferat", ArkivRef.Text);
-            ins.Parameters.AddWithValue("@Arkivmappe", ArkivMappe.Text);
-            ins.Parameters.AddWithValue("@Avtale", DropDownList1.Text);
+            ins.Parameters.AddWithValue("@Beskrivelse", NavnText.Text);
+            ins.Parameters.AddWithValue("@AvtaleType", DropDownList1.Text);
             ins.Parameters.AddWithValue("@Kategori", DropDownList2.Text);
             ins.Parameters.AddWithValue("@Beskrivelse", Beskrivelse.Text);
             ins.Parameters.AddWithValue("@Finansieringsselskap", DropDownList3.Text);
             ins.Parameters.AddWithValue("@Leverandør", DropDownList4.Text);
             ins.Parameters.AddWithValue("@Ansvarlig", DropDownList5.Text);
             ins.Parameters.AddWithValue("@Lokasjon", DropDownList6.Text);
-            ins.Parameters.AddWithValue("@Status", Status.Text);
+            ins.Parameters.AddWithValue("@Status", StatusList.Text);
             ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate);
             ins.Parameters.AddWithValue("@SluttDato", Calendar1.SelectedDate);
             ins.Parameters.AddWithValue("@Ansatt", DropDownList7.Text);

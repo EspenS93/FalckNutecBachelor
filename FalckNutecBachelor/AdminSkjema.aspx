@@ -48,22 +48,14 @@
         </div>
 
         <h3>Avtaler</h3>
-        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound">
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
-                <asp:BoundField DataField="navn" HeaderText="Navn" SortExpression="navn" />
-                <asp:BoundField DataField="AvtaleType" HeaderText="AvtaleType" SortExpression="AvtaleType" />
-                <asp:BoundField DataField="Kategori" HeaderText="Kategori" SortExpression="Kategori" />
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" SortExpression="Beskrivelse" />
-                <asp:BoundField DataField="Finansieringsselskap" HeaderText="Finansiering" SortExpression="Finansieringsselskap" />
-                <asp:BoundField DataField="Leverandør" HeaderText="Leverandør" SortExpression="Leverandør" />
                 <asp:BoundField DataField="Ansvarlig" HeaderText="Ansvarlig" SortExpression="Ansvarlig" />
-                <asp:BoundField DataField="Lokasjon" HeaderText="Lokasjon" SortExpression="Lokasjon" />
-                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                <asp:BoundField DataField="StartDato" HeaderText="StartDato" SortExpression="StartDato" />
                 <asp:BoundField DataField="SluttDato" HeaderText="SluttDato" SortExpression="SluttDato" />
-                <asp:BoundField DataField="Registrert Av" HeaderText="Registrert Av" SortExpression="Registrert Av" />
                 <asp:CheckBoxField DataField="FornyAuto" HeaderText="FornyAuto" SortExpression="FornyAuto" />
+                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
         </asp:GridView>
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
@@ -71,14 +63,14 @@
     <div>
             <h3>Rapporter</h3>
             <p>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="Navn">
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="Navn">
                     <asp:ListItem>Klikk for å velge leverandør</asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
-                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="navn" DataValueField="navn">
+                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="Beskrivelse" DataValueField="Beskrivelse">
                     <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
-                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [navn] FROM [Avtaler]"></asp:SqlDataSource>
+                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
             </p>
         </div>
     </div>

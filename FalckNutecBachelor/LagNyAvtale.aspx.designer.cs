@@ -22,24 +22,6 @@ namespace FalckNutecBachelor {
         protected global::System.Web.UI.WebControls.TextBox NavnText;
         
         /// <summary>
-        /// ArkivRef control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ArkivRef;
-        
-        /// <summary>
-        /// ArkivMappe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ArkivMappe;
-        
-        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>
@@ -157,24 +139,6 @@ namespace FalckNutecBachelor {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource6;
         
         /// <summary>
-        /// Status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Status;
-        
-        /// <summary>
-        /// Calendar1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
-        
-        /// <summary>
         /// DropDownList7 control.
         /// </summary>
         /// <remarks>
@@ -184,13 +148,40 @@ namespace FalckNutecBachelor {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
         
         /// <summary>
-        /// SqlDataSource7 control.
+        /// StatusList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource7;
+        protected global::System.Web.UI.WebControls.DropDownList StatusList;
+        
+        /// <summary>
+        /// StartDatoText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox StartDatoText;
+        
+        /// <summary>
+        /// SluttDatoText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SluttDatoText;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// CheckBox1 control.

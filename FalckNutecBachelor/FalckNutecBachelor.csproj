@@ -269,6 +269,7 @@
     <Content Include="LagNyAvtale.aspx" />
     <Content Include="LagNyAvtaletype.aspx" />
     <Content Include="LagNyBetalingsanmerkning.aspx" />
+    <Content Include="LagNyFinansieringsselskap.aspx" />
     <Content Include="LagNyLeverandør.aspx" />
     <Content Include="LagNyLokasjon.aspx" />
     <Content Include="LagNyMemo.aspx" />
@@ -495,6 +496,13 @@
     </Compile>
     <Compile Include="LagNyBruker.aspx.designer.cs">
       <DependentUpon>LagNyBruker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyFinansieringsselskap.aspx.cs">
+      <DependentUpon>LagNyFinansieringsselskap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyFinansieringsselskap.aspx.designer.cs">
+      <DependentUpon>LagNyFinansieringsselskap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -67,7 +67,7 @@
                                 <li><a href="~/nyLeverandør" title="Ny Leverandør">Ny Leverandør</a></li>
                             </ul>-->
                             <ul class="nav navbar-nav navbar-right">
-                                <li><!--<a runat="server" href="~/Account/Manage" title="Manage your account">-->Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li ><!--<a runat="server" href="~/Account/Manage" title="Manage your account">-->Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="Login" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebMatrix.WebData;
@@ -16,6 +17,14 @@ namespace FalckNutecBachelor
             if (!WebSecurity.IsAuthenticated)
             {
                 Response.Redirect("Login");
+            }
+            else
+            {
+                if (!Roles.IsUserInRole("Writer"))
+                {
+                    //ACCESS DENIED SIDE
+                    Response.Redirect("Startskjema");
+                }
             }
         }
 

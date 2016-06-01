@@ -10,14 +10,8 @@
     <form id="form1">
         <div>
             <h1>Ny Avtale </h1>
-            <p>Navn:
+            <p>Avtalenavn:
             <asp:TextBox ID="NavnText" runat="server"></asp:TextBox>
-            </p>
-            <p>Arkivreferat:
-                <asp:TextBox ID="ArkivRef" MaxLength="1" runat="server"></asp:TextBox>
-            </p>
-            <p>Arkivmappe:
-            <asp:TextBox ID="ArkivMappe" MaxLength="1" runat="server"></asp:TextBox>
             </p>
             <p>
             Avtaletype:
@@ -58,8 +52,25 @@
                 </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Lokasjon] FROM [Lokasjon]"></asp:SqlDataSource>
               </p>
+            <p>
+            Seksjon:
+                <asp:DropDownList ID="DropDownList7" runat="server">
+                </asp:DropDownList>
+              </p>
             <p>Status:
-            <asp:TextBox ID="Status" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="StatusList" runat="server">
+                    <asp:ListItem>Aktiv</asp:ListItem>
+                    <asp:ListItem Value="TrengerTilsyn">Trenger tilsyn</asp:ListItem>
+                    <asp:ListItem>Avsluttet</asp:ListItem>
+                </asp:DropDownList>
+            </p>
+            <p>
+                StartDato:
+            <asp:TextBox ID="StartDatoText" runat="server" TextMode="Date"></asp:TextBox>
+            </p>
+            <p>
+                SluttDato:
+            <asp:TextBox ID="SluttDatoText" runat="server" TextMode="Date"></asp:TextBox>
             </p>
             <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
                 <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
@@ -68,13 +79,7 @@
                 <SelectedDayStyle BackColor="#333399" ForeColor="White" />
                 <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
                 <TodayDayStyle BackColor="#CCCCCC" />
-            </asp:Calendar>  
-            <p>
-            Velg ansatt:
-                <asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource7" DataTextField="Etternavn" DataValueField="Etternavn">
-                </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Etternavn] FROM [Ansatte]"></asp:SqlDataSource>
-              </p>      
+            </asp:Calendar>      
             <p>Autoforny
             <asp:CheckBox ID="CheckBox1" runat="server" />
             </p>
