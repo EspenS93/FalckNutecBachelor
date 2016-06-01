@@ -33,7 +33,6 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Beskrivelse", NavnText.Text);
             ins.Parameters.AddWithValue("@AvtaleType", DropDownList1.Text);
             ins.Parameters.AddWithValue("@Kategori", DropDownList2.Text);
-            ins.Parameters.AddWithValue("@Beskrivelse", Beskrivelse.Text);
             ins.Parameters.AddWithValue("@Finansieringsselskap", DropDownList3.Text);
             ins.Parameters.AddWithValue("@Leverandør", DropDownList4.Text);
             ins.Parameters.AddWithValue("@Ansvarlig", DropDownList5.Text);
@@ -41,7 +40,7 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Status", StatusList.Text);
             ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate);
             ins.Parameters.AddWithValue("@SluttDato", Calendar1.SelectedDate);
-            ins.Parameters.AddWithValue("@Ansatt", DropDownList7.Text);
+            ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
 
             //PDF
