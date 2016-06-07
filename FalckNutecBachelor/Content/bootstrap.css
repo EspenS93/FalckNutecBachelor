@@ -162,7 +162,7 @@ button,
 input,
 select,
 textarea {
-  margin: 0 0 0 16px;
+  margin: 0 0 6 16px;
   font-family: inherit;
   font-size: 100%;
 }
@@ -402,6 +402,7 @@ hr {
 
 p {
   margin: 0 0 10px;
+    position: relative;
 }
 
 .lead {
