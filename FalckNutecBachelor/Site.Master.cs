@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
@@ -74,7 +75,7 @@ namespace FalckNutecBachelor
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
-            Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            WebSecurity.Logout();
         }
     }
 

@@ -10,87 +10,87 @@
 namespace FalckNutecBachelor {
     
     
-    public partial class Startskjema {
+    public partial class LagNyFinansieringsselskap {
         
         /// <summary>
-        /// Button1 control.
+        /// NavnText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox NavnText;
         
         /// <summary>
-        /// Button2 control.
+        /// AdresseText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.TextBox AdresseText;
         
         /// <summary>
-        /// avtaler2 control.
+        /// PostadresseText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView avtaler2;
+        protected global::System.Web.UI.WebControls.TextBox PostadresseText;
         
         /// <summary>
-        /// AvtaleKnapp control.
+        /// KontaktText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AvtaleKnapp;
+        protected global::System.Web.UI.WebControls.TextBox KontaktText;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// TLFText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.TextBox TLFText;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// FaksText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TextBox FaksText;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// EpostText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.TextBox EpostText;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// SubmitKnapp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Button SubmitKnapp;
         
         /// <summary>
-        /// SqlDataSource3 control.
+        /// svar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        protected global::System.Web.UI.WebControls.Label svar;
     }
 }

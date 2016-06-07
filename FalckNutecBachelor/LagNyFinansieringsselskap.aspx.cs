@@ -11,7 +11,7 @@ using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
-	public partial class LagNyLeverandør : System.Web.UI.Page
+	public partial class LagNyFinansieringsselskap : System.Web.UI.Page
 	{
         //Mangler exceptions
         SqlConnection con;
@@ -28,16 +28,14 @@ namespace FalckNutecBachelor
 
         protected void SubmitKnapp_Click(object sender, EventArgs e)
         {
-            SqlCommand ins = new SqlCommand("LagNyLeverandør", con);
+            SqlCommand ins = new SqlCommand("LagNyFinansieringsselskap", con);
             ins.CommandType = CommandType.StoredProcedure;
             ins.Parameters.AddWithValue("@Navn", NavnText.Text);
-            ins.Parameters.AddWithValue("@Underleverandør", ULevDDL.Text);
-            ins.Parameters.AddWithValue("@Organisasjonsnr", OrgNrText.Text);
             ins.Parameters.AddWithValue("@Adresse", AdresseText.Text);
-            ins.Parameters.AddWithValue("@Postadresse", PostText.Text);
-            ins.Parameters.AddWithValue("@Kontaktperson", KontaktText.Text);
+            ins.Parameters.AddWithValue("@Postadresse", PostadresseText.Text);
+            ins.Parameters.AddWithValue("@KontaktPerson", KontaktText.Text);
             ins.Parameters.AddWithValue("@Telefonnr", TLFText.Text);
-            ins.Parameters.AddWithValue("@Telefaks", FaxText.Text);
+            ins.Parameters.AddWithValue("@Telefaksnr", FaksText.Text);
             ins.Parameters.AddWithValue("@Epost", EpostText.Text);
             con.Open();
             try

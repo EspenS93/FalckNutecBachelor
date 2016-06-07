@@ -249,10 +249,14 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="calendar_blank.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ErrorPages\403.aspx" />
+    <Content Include="ErrorPages\404.aspx" />
+    <Content Include="ErrorPages\Oops.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -266,6 +270,7 @@
     <Content Include="LagNyAvtale.aspx" />
     <Content Include="LagNyAvtaletype.aspx" />
     <Content Include="LagNyBetalingsanmerkning.aspx" />
+    <Content Include="LagNyFinansieringsselskap.aspx" />
     <Content Include="LagNyLeverandør.aspx" />
     <Content Include="LagNyLokasjon.aspx" />
     <Content Include="LagNyMemo.aspx" />
@@ -320,6 +325,7 @@
     <Content Include="AdminSkjema.aspx" />
     <Content Include="Startskjema.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="AdministrereBruker.aspx" />
     <Content Include="VisAvtale.aspx" />
     <Content Include="VisFinansieringsselskap.aspx" />
     <Content Include="VisLeverandør.aspx" />
@@ -464,12 +470,40 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ErrorPages\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LagNyBruker.aspx.cs">
       <DependentUpon>LagNyBruker.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LagNyBruker.aspx.designer.cs">
       <DependentUpon>LagNyBruker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LagNyFinansieringsselskap.aspx.cs">
+      <DependentUpon>LagNyFinansieringsselskap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LagNyFinansieringsselskap.aspx.designer.cs">
+      <DependentUpon>LagNyFinansieringsselskap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -593,6 +627,13 @@
     </Compile>
     <Compile Include="LagNyKategori.aspx.designer.cs">
       <DependentUpon>LagNyKategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrereBruker.aspx.cs">
+      <DependentUpon>AdministrereBruker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrereBruker.aspx.designer.cs">
+      <DependentUpon>AdministrereBruker.aspx</DependentUpon>
     </Compile>
     <Compile Include="VisAvtale.aspx.cs">
       <DependentUpon>VisAvtale.aspx</DependentUpon>

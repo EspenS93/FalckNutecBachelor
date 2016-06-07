@@ -37,7 +37,7 @@ namespace FalckNutecBachelor
         {
             SqlCommand ins = new SqlCommand("LagNyLokasjon", con);
             ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@Lokasjon", LokasjonText.Text);
+            ins.Parameters.AddWithValue("@Navn", LokasjonText.Text);
             con.Open();
             try
             {

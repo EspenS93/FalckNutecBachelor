@@ -21,11 +21,11 @@ namespace FalckNutecBachelor
             {
                 if (Roles.IsUserInRole("Admin"))
                 {
-                    Response.Redirect("AdminSkjema.aspx");
+                    Response.Redirect("~/AdminSkjema.aspx");
                 }
                 else
                 {
-                    Response.Redirect("Startskjema.aspx");
+                    Response.Redirect("~/Startskjema.aspx");
                 }
 
             }
@@ -36,14 +36,14 @@ namespace FalckNutecBachelor
 
         protected void Login_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            if(WebSecurity.Login(Login1.UserName, Login1.Password, Login1.RememberMeSet))
+            if (WebSecurity.Login(Login1.UserName, Login1.Password, Login1.RememberMeSet))
             {
-                if(Roles.IsUserInRole("Admin"))
+                if (Roles.IsUserInRole(Login1.UserName,"Admin"))
                 {
-                    Response.Redirect("AdminSkjema.aspx");
+                    Response.Redirect("~/AdminSkjema.aspx");
                 }else
                 {
-                    Response.Redirect("Startskjema.aspx");
+                    Response.Redirect("~/Startskjema.aspx");
                 }
             }
             else

@@ -15,7 +15,8 @@ namespace FalckNutecBachelor
 	public partial class LagNyAvtale : System.Web.UI.Page
 	{
             //Mangler exceptions
-            SqlConnection con;
+        SqlConnection con;
+        String dato;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!WebSecurity.IsAuthenticated)
@@ -25,25 +26,34 @@ namespace FalckNutecBachelor
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
             "User Id=dbUser;" + "Password=Bachelor2016;");
+            
+        }
+        protected void KalenderTrykk(object sender, EventArgs e)
+        {
+            if (dato=="Start")
+            {
+                StartDatoText.Text = Calendar1.SelectedDate.ToString();
+            }else
+            {
+                SluttDatoText.Text = Calendar1.SelectedDate.ToString();
+            }
+            Calendar1.Visible = false;
         }
         protected void SubmitKnapp_Click(object sender, EventArgs e)
         {
             SqlCommand ins = new SqlCommand("LagNyAvtale", con);
             ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@navn", NavnText.Text);
-            ins.Parameters.AddWithValue("@Arkivreferat", ArkivRef.Text);
-            ins.Parameters.AddWithValue("@Arkivmappe", ArkivMappe.Text);
-            ins.Parameters.AddWithValue("@Avtale", DropDownList1.Text);
+            ins.Parameters.AddWithValue("@Beskrivelse", NavnText.Text);
+            ins.Parameters.AddWithValue("@AvtaleType", DropDownList1.Text);
             ins.Parameters.AddWithValue("@Kategori", DropDownList2.Text);
-            ins.Parameters.AddWithValue("@Beskrivelse", Beskrivelse.Text);
             ins.Parameters.AddWithValue("@Finansieringsselskap", DropDownList3.Text);
             ins.Parameters.AddWithValue("@Leverandør", DropDownList4.Text);
             ins.Parameters.AddWithValue("@Ansvarlig", DropDownList5.Text);
             ins.Parameters.AddWithValue("@Lokasjon", DropDownList6.Text);
-            ins.Parameters.AddWithValue("@Status", Status.Text);
+            ins.Parameters.AddWithValue("@Status", StatusList.Text);
             ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate);
             ins.Parameters.AddWithValue("@SluttDato", Calendar1.SelectedDate);
-            ins.Parameters.AddWithValue("@Ansatt", DropDownList7.Text);
+            ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
 
             //PDF
@@ -75,5 +85,15 @@ namespace FalckNutecBachelor
             con.Close();
         }
 
+        protected void KalenderKnapp_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = true;
+            dato = "Start";
+        }
+        protected void KalenderKnapp2_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = true;
+            dato = "Slutt";
+        }
     }
 }

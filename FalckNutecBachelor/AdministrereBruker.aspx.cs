@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace FalckNutecBachelor
 {
-    public partial class VisAvtale : System.Web.UI.Page
+    public partial class AdministrereBruker : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }
