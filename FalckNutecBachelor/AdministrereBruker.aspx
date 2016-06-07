@@ -6,8 +6,6 @@
         <h1>Administrer Bruker</h1>
         <div>
          
-        
-
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1">
                 <EditItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False"  />
                 <ItemTemplate>
@@ -37,7 +35,7 @@
             </asp:DataList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAnsatt" SelectCommandType="StoredProcedure">
                 <SelectParameters>
-                    <asp:Parameter Name="AnsattID" Type="Int32"  />
+                    <asp:QueryStringParameter Name="AnsattID" QueryStringField="AnsattID" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
             </div>

@@ -10,7 +10,7 @@ using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
-    public partial class Startskjema : System.Web.UI.Page
+    public partial class Startskjema : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace FalckNutecBachelor
         }
 
 
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {

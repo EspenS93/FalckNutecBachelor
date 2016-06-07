@@ -12,25 +12,40 @@
         <div>
             <p>Velg registeringsskjema</p>
             <p>
-                <asp:Button ID="Button1" runat="server" Text="Avtaler" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Avtaler" PostBackUrl="~/LagNyAvtale.aspx" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Leverandører" />
+        <asp:Button ID="Button2" runat="server" Text="Leverandører" PostBackUrl="~/LagNyLeverandør.aspx" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button3" runat="server" Text="Finansieringsselskap" PostBackUrl="~/LagNyFinansieringsselskap.aspx" />
             </p>
         </div>
         <div>
             <h3>Avtaler</h3>
-            <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True">
-                <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
-                    <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" SortExpression="Beskrivelse" />
-                    <asp:BoundField DataField="Ansvarlig" HeaderText="Ansvarlig" SortExpression="Ansvarlig" />
-                    <asp:BoundField DataField="SluttDato" HeaderText="SluttDato" SortExpression="SluttDato" />
-                    <asp:CheckBoxField DataField="FornyAuto" HeaderText="FornyAuto" SortExpression="FornyAuto" />
-                    <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                </Columns>
-            </asp:GridView>
-            <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtalerOgPDF" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <div id="sokefelt" style="border: thick solid #000000; background-color: #999999; width: 443px;">
+            <asp:Button ID="apneSokeFelt" Text="Søk" runat="server" OnClick="apneSokeFelt_Click" />
+            <asp:DropDownList ID="DropDownList3" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList4" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList5" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList6" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:CheckBox ID="AlleCheckbox" runat="server" Visible="false" Text="Alle Avtaler"/>
+            <asp:Button ID="lukkeSokeFelt" runat="server" Text="X" OnClick="lukkeSokeFelt_Click" Visible="false" />
+        </div>
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
+                <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" SortExpression="Beskrivelse" />
+                <asp:BoundField DataField="Ansvarlig" HeaderText="Ansvarlig" SortExpression="Ansvarlig" />
+                <asp:BoundField DataField="SluttDato" HeaderText="SluttDato" SortExpression="SluttDato" />
+                <asp:CheckBoxField DataField="FornyAuto" HeaderText="FornyAuto" SortExpression="FornyAuto" />
+                <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
+            </Columns>
+        </asp:GridView>
+        <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtalerOgPDF" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         </div>
         <div>
             <h3>Rapporter</h3>

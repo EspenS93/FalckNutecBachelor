@@ -10,7 +10,7 @@
             <asp:Login ID="Login1" runat="server" OnAuthenticate="Login_Authenticate">
             </asp:Login>
         </form>
-        <p>Glemt passord osv...</p>
+       
         <p></p>
     </div>
     <div class="links">

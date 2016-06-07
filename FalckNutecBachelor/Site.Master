@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FalckNutecBachelor.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -11,7 +10,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -46,28 +45,72 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/"><asp:Image ID="Image1" runat="server" BackColor="SlateGray" Height="40px" ImageUrl="~/Pictures/FalckN_logo_pos_trans.png" style="margin-top: -10px" /></a>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <asp:Image ID="Image1" runat="server" BackColor="SlateGray" Height="40px" ImageUrl="~/Pictures/FalckN_logo_pos_trans.png" Style="margin-top: -10px" /></a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Hjem</a></li>
-                        <!-- <li><a runat="server" href="~/About">Om Oss</a></li>
-                        <li><a runat="server" href="~/Contact">Kontakt oss</a></li> -->
-                    </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <!--<li><a runat="server" href="Register">Register</a></li>-->
-                                <li><a runat="server" href="Login">Log in</a></li>
+                            <ul class="nav navbar-nav">
+                                <li><a runat="server" href="~/">Hjem</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                            <!-- <ul class="nav navbar-nav">
-                                <li><a href="~/nyAvtale" title="Ny Avtale">Ny Avtale</a></li>
-                                <li><a href="~/nyLeverandør" title="Ny Leverandør">Ny Leverandør</a></li>
-                            </ul>-->
+                                <li>
+                                    <a runat="server">Lag Ny</a>
+                                    <ul>
+                                        <%if (Roles.IsUserInRole("Admin"))
+                                            {%>
+                                         <li>
+                                            <a href="LagNyAnsatt.aspx">Ansatt</a>
+                                        </li>
+                                        <% }%>
+                                        <li>
+                                            <a href="LagNyAvtale.aspx">Avtale</a>
+                                        </li>
+                                        <%if (Roles.IsUserInRole("Admin"))
+                                            {%>
+                                        <li>
+                                            <a href="LagNyAvtaletype.aspx">Avtaletype</a>
+                                        </li>
+                                        <% }%>
+                                        <li>
+                                            <a href="LagNyFinansieringsselskap.aspx">Finansieringsselskap</a>
+                                        </li>
+                                        <%if (Roles.IsUserInRole("Admin"))
+                                            {%>
+                                        <li>
+                                            <a href="LagNyKategori.aspx">Kategori</a>
+                                        </li>
+                                        <li>
+                                            <a href="LagNyLeverandør.aspx">Leverandør</a>
+                                        </li>
+                                        <li>
+                                            <a href="LagNyLokasjon.aspx">Lokasjon</a>
+                                        </li>
+                                        <li>
+                                            <a href="LagNySeksjon.aspx">Seksjon</a>
+                                        </li>
+                                       <% }%>
+                                    </ul>
+                                </li>
+
+                                <li><a runat="server">Vis</a></li>
+                            </ul> -->
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li ><!--<a runat="server" href="~/Account/Manage" title="Manage your account">-->Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="AdministrereBruker.aspx<% Response.Write("?AnsattID=" + WebMatrix.WebData.WebSecurity.CurrentUserId);%>">Hei <%: Context.User.Identity.GetUserName()  %> !</a>
+                                </li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="Login" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

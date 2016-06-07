@@ -12,33 +12,25 @@
     </form>
     <div>
         <div>
-            <asp:DropDownList ID="test" runat="server" >
-                <asp:ListItem Selected="True">Avtaler</asp:ListItem>
-                <asp:ListItem>Finansieringsselskaper</asp:ListItem>
-                <asp:ListItem>Leverandører</asp:ListItem>
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT Avtaler.navn AS Avtaler, Finansieringsselskap.Navn AS Finansieringsselskap, Leverandør.Navn AS Leverandører FROM Avtaler CROSS JOIN Finansieringsselskap CROSS JOIN Leverandør"></asp:SqlDataSource>
             <div style="position: relative; z-index: auto; top: -5px; left: 13px; width: 245px;">
                 <p>Lag ny</p>
-                    <asp:DropDownList ID="LagNyListe" runat="server" OnSelectedIndexChanged="LagNyListe_SelectedIndexChanged" >
+                    <asp:DropDownList ID="LagNyListe" runat="server" OnSelectedIndexChanged="LagNyListe_SelectedIndexChanged" AutoPostBack="true" >
                         <asp:ListItem Value="LagNyAnsatt" Selected="True">Ansatt</asp:ListItem>
                         <asp:ListItem Value="LagNyAvtale">Avtale</asp:ListItem>
                         <asp:ListItem Value="LagNyAvtaleType">AvtaleType</asp:ListItem>
                         <asp:ListItem Value="LagNyBetalingsanmerkning">Betalingsanmerkning</asp:ListItem>
-                        <asp:ListItem Value="LagNyBruker">Bruker</asp:ListItem>
+                        <asp:ListItem Value="LagNyFinansieringsselskap">Finansieringsselskap</asp:ListItem>
                         <asp:ListItem Value="LagNyKategori">Kategori</asp:ListItem>
                         <asp:ListItem Value="LagNyLeverandør">Leverandør</asp:ListItem>
                         <asp:ListItem Value="LagNyLokasjon">Lokasjon</asp:ListItem>
-                        <asp:ListItem Value="LagNyMemo">Memo</asp:ListItem>
                         <asp:ListItem Value="LagNySeksjon">Seksjon</asp:ListItem>
-                        <asp:ListItem Value="LagNyBruker">Bruker</asp:ListItem>
                     </asp:DropDownList>
                     <asp:Button ID="LagNyButton" runat="server" Text="Gå til" PostBackUrl="LagNyAnsatt.aspx" />
                 </div>
-            <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 246px;">
+            <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 246px;" dir="ltr">
                 <p>Vis</p>
-                <asp:DropDownList ID="VisListe" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged">
-                    <asp:ListItem Value="VisAvtale">Avtale</asp:ListItem> 
+                <asp:DropDownList ID="VisListe" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Value="VisAvtale" Selected="True">Avtale</asp:ListItem> 
                     <asp:ListItem Value="VisFinansieringsselskap">Finansieringsselskap</asp:ListItem>
                     <asp:ListItem Value="VisLeverandør">Leverandør</asp:ListItem>
                 </asp:DropDownList>
@@ -48,7 +40,20 @@
         </div>
 
         <h3>Avtaler</h3>
-        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True">
+        <div id="sokefelt" style="border: thick solid #000000; background-color: #999999; width: 443px;">
+            <asp:Button ID="apneSokeFelt" Text="Søk" runat="server" OnClick="apneSokeFelt_Click" />
+            <asp:DropDownList ID="DropDownList3" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList4" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList5" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:DropDownList ID="DropDownList6" runat="server" Visible="false">
+                </asp:DropDownList>
+            <asp:CheckBox ID="AlleCheckbox" runat="server" Visible="false" Text="Alle Avtaler"/>
+            <asp:Button ID="lukkeSokeFelt" runat="server" Text="X" OnClick="lukkeSokeFelt_Click" Visible="false" />
+        </div>
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" SortExpression="Beskrivelse" />
