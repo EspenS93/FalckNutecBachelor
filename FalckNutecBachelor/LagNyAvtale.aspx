@@ -65,13 +65,25 @@
                 <asp:ImageButton ID="KalenderKnapp" runat="server" OnClick="KalenderKnapp_Click" ImageUrl="~/calendar_blank.png" />
                 &nbsp;SluttDato:
             <asp:TextBox ID="SluttDatoText" runat="server"></asp:TextBox><asp:ImageButton ID="KalenderKnapp2" runat="server" OnClick="KalenderKnapp2_Click" ImageUrl="~/calendar_blank.png" />
-                <asp:Calendar ID="Calendar1" Visible="false" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px" OnSelectionChanged="KalenderTrykk">
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
+                <asp:Calendar ID="Calendar1" Visible="False" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="KalenderTrykk1" CellPadding="1" DayNameFormat="Shortest">
+                    <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                    <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                     <OtherMonthDayStyle ForeColor="#999999" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                    <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                    <TodayDayStyle BackColor="#CCCCCC" />
+                    <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+                    <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                    <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                    <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                    <WeekendDayStyle BackColor="#CCCCFF" />
+                </asp:Calendar>
+                <asp:Calendar ID="Calendar2" Visible="False" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="KalenderTrykk2" CellPadding="1" DayNameFormat="Shortest">
+                    <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                    <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#009999" ForeColor="#CCFF99" Font-Bold="True" />
+                    <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                    <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                    <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                    <WeekendDayStyle BackColor="#CCCCFF" />
                 </asp:Calendar>
             </p>
             <p>

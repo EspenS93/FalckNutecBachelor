@@ -29,7 +29,8 @@ namespace FalckNutecBachelor
                 ins1.CommandType = CommandType.StoredProcedure;
                 ins1.Parameters.AddWithValue("@AvtaleNavn", NavnText.Text);
                 ins1.Parameters.AddWithValue("@Fil", bytes);
-                ins1.Parameters.AddWithValue("@PDFNavn", Path.GetFileName(postedFile.FileName));
+                ins1.Parameters.AddWithValue("@PDFNavn", postedFile.FileName);
+                ins1.Parameters.AddWithValue("@ContentType", postedFile.ContentType);
                 ins1.ExecuteNonQuery();
             }
 
@@ -45,16 +46,15 @@ namespace FalckNutecBachelor
             "User Id=dbUser;" + "Password=Bachelor2016;");
             
         }
-        protected void KalenderTrykk(object sender, EventArgs e) // FUNKER IKKE
+        protected void KalenderTrykk1(object sender, EventArgs e) // FUNKER IKKE
         {
-            if (dato=="Start")
-            {
-                StartDatoText.Text = Calendar1.SelectedDate.ToString();
-            }else
-            {
-                SluttDatoText.Text = Calendar1.SelectedDate.ToShortDateString();
-            }
+            StartDatoText.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
+        }
+        protected void KalenderTrykk2(object sender, EventArgs e) // FUNKER IKKE
+        {
+            SluttDatoText.Text = Calendar2.SelectedDate.ToShortDateString();
+            Calendar2.Visible = false;
         }
         protected void SubmitKnapp_Click(object sender, EventArgs e)
         {
@@ -108,12 +108,10 @@ namespace FalckNutecBachelor
         protected void KalenderKnapp_Click(object sender, EventArgs e)
         {
             Calendar1.Visible = true;
-            dato = "Start";
         }
         protected void KalenderKnapp2_Click(object sender, EventArgs e)
         {
-            Calendar1.Visible = true;
-            dato = "Slutt";
+            Calendar2.Visible = true;
         }
     }
 }
