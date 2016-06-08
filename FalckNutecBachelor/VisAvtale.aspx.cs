@@ -48,15 +48,16 @@ namespace FalckNutecBachelor
 
         protected void DownloadFile(object sender, EventArgs e)
         {
+            int id = int.Parse((sender as LinkButton).CommandArgument);
             byte[] bytes;
             string fileName, contentType;
             using (con)
             {
-                using (SqlCommand cmd = new SqlCommand("HentPDF",con))
+                using (SqlCommand cmd = new SqlCommand("HentEnPDF",con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@AvtaleID", Request.QueryString["AvtaleID"]);
+                    cmd.Parameters.AddWithValue("@ID", id);
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {

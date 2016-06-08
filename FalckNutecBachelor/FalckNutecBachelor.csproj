@@ -277,6 +277,7 @@
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Registrering.aspx" />
     <Content Include="LagNyKategori.aspx" />
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -52,21 +52,21 @@
             <asp:GridView ID="GridView1" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White"
                 RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" AlternatingRowStyle-ForeColor="#000"
                 AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
-<AlternatingRowStyle BackColor="White" ForeColor="#000000"></AlternatingRowStyle>
+                <AlternatingRowStyle BackColor="White" ForeColor="#000000"></AlternatingRowStyle>
                 <Columns>
                     <asp:BoundField DataField="Navn" HeaderText="File Name" />
                     <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <asp:LinkButton ID="lnkDownload" runat="server" Text="Download" OnClick="DownloadFile"></asp:LinkButton>
+                            <asp:LinkButton ID="lnkDownload" runat="server" Text="Download" OnClick="DownloadFile" CommandArgument='<%# Eval("ID") %>'></asp:LinkButton>
                         </ItemTemplate>
 
-<ItemStyle HorizontalAlign="Center"></ItemStyle>
+                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:TemplateField>
                 </Columns>
 
-<HeaderStyle BackColor="#3AC0F2" ForeColor="White"></HeaderStyle>
+                <HeaderStyle BackColor="#3AC0F2" ForeColor="White"></HeaderStyle>
 
-<RowStyle BackColor="#A1DCF2"></RowStyle>
+                <RowStyle BackColor="#A1DCF2"></RowStyle>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentPDF" SelectCommandType="StoredProcedure">
                 <SelectParameters>
@@ -82,7 +82,7 @@
         <div>
             <h2>Skriv Memo:</h2>
             <asp:TextBox ID="SkrivMemo" runat="server" TextMode="MultiLine"></asp:TextBox>
-            <asp:Button ID="MemoKnapp" runat="server" OnClick="MemoKnapp_Click" Text="Send"/>
+            <asp:Button ID="MemoKnapp" runat="server" OnClick="MemoKnapp_Click" Text="Send" />
         </div>
         <div>
             <h2>Memo: </h2>
