@@ -65,5 +65,29 @@ namespace FalckNutecBachelor
                 Response.Redirect("VisAvtale.aspx?AvtaleID=" + avtaler2.SelectedRow.Cells[0].Text);
             }
         }
+        protected void apneSokeFelt_Click(object sender, EventArgs e)
+        {
+            apneSokeFelt.Visible = false;
+            DropDownList3.Visible = true;
+            DropDownList4.Visible = true;
+            DropDownList5.Visible = true;
+            DropDownList6.Visible = true;
+            DropDownList3.Visible = true;
+            DropDownList3.Visible = true;
+            AlleCheckbox.Visible = true;
+            lukkeSokeFelt.Visible = true;
+        }
+        protected void lukkeSokeFelt_Click(object sender, EventArgs e)
+        {
+            apneSokeFelt.Visible = true;
+            DropDownList3.Visible = false;
+            DropDownList4.Visible = false;
+            DropDownList5.Visible = false;
+            DropDownList6.Visible = false;
+            DropDownList3.Visible = false;
+            DropDownList3.Visible = false;
+            AlleCheckbox.Visible = false;
+            lukkeSokeFelt.Visible = false;
+        }
     }
 }
