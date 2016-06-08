@@ -62,7 +62,7 @@ namespace FalckNutecBachelor
                     {
                         sdr.Read();
                         bytes = (byte[])sdr["Fil"];
-                        contentType = "application/pdf";
+                        contentType = sdr["ContentType"].ToString();
                         fileName = sdr["Navn"].ToString();
                     }
                     con.Close();
