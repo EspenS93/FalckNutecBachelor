@@ -9,7 +9,6 @@
     <form id="form1">
 
         <h1>Ny Kategori</h1>
-        <p>//Skal kunne lage nye og redigere eksisterende brukere gjennom Admin</p>
         <p>
             Kategori:
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

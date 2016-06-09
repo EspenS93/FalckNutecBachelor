@@ -92,16 +92,18 @@ namespace FalckNutecBachelor
 
         protected void AlleCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (AlleCheckbox.Checked)
-            {
-                avtaler2.DataSourceID = "SqlDataSource1";
-                avtaler2.DataBind();
-            }
-            else
-            {
-                avtaler2.DataSourceID = "SqlDataSource4";
-                avtaler2.DataBind();
-            }
+            /* if (AlleCheckbox.Checked)
+             {
+                 avtaler2.DataSourceID = "SqlDataSource1";
+                 avtaler2.DataBind();
+             }
+             else
+             {
+                //SqlDataSource4.SelectParameters.Clear();
+               // SqlDataSource4.SelectParameters.Add("@AnsattID", WebSecurity.CurrentUserId.ToString());
+                 avtaler2.DataSourceID = "SqlDataSource4";
+                 avtaler2.DataBind();
+             }*/
         }
     }
 }

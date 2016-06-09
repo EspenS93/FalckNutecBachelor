@@ -9,9 +9,6 @@
 
             <asp:DataList ID="DataList1" runat="server" DataKeyField="ID" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
-                    ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                    <br />
                     Navn:
                     <asp:Label ID="NavnLabel" runat="server" Text='<%# Eval("Navn") %>' />
                     <br />

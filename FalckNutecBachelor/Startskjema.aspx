@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Startskjema.aspx.cs" Inherits="FalckNutecBachelor.Startskjema" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Startskjema" AutoEventWireup="true" CodeBehind="Startskjema.aspx.cs" Inherits="FalckNutecBachelor.Startskjema" EnableEventValidation="false" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -34,7 +34,7 @@
             <asp:CheckBox ID="AlleCheckbox" runat="server" Visible="false" Text="Alle Avtaler" OnCheckedChanged="AlleCheckbox_CheckedChanged" AutoPostBack="True"/>
             <asp:Button ID="lukkeSokeFelt" runat="server" Text="X" OnClick="lukkeSokeFelt_Click" Visible="false" />
         </div>
-        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource4" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" SortExpression="Navn" />
@@ -45,12 +45,16 @@
             </Columns>
         </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentMineAvtaler" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:Parameter Name="AnsattID" Type="Int32" />
+                </SelectParameters>         
             </asp:SqlDataSource>
-            <%SqlDataSource4.SelectParameters.Add("AnsattID", User.Identity.GetUserId().ToString());%>
+            <%SqlDataSource4.SelectParameters["AnsattID"].DefaultValue = WebMatrix.WebData.WebSecurity.CurrentUserId.ToString(); ;
+                SqlDataSource4.DataBind();avtaler2.DataBind(); %>
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         </div>
-        <div>
+        <!--<div>
             <h3>Rapporter</h3>
             <p>
                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="Navn">
@@ -62,6 +66,6 @@
                     <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
                 </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
             </p>
-        </div>
+        </div>-->
     </form>
 </asp:Content>

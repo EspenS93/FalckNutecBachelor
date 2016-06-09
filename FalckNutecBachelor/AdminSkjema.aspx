@@ -12,13 +12,12 @@
     </form>
     <div>
         <div>
-            <div style="position: relative; z-index: auto; top: -5px; left: 13px; width: 245px;">
+            <div style="position: relative; z-index: auto; top: -5px; left: 13px; width: 338px;">
                 <p>Lag ny</p>
                     <asp:DropDownList ID="LagNyListe" runat="server" OnSelectedIndexChanged="LagNyListe_SelectedIndexChanged" AutoPostBack="true" >
                         <asp:ListItem Value="LagNyAnsatt" Selected="True">Ansatt</asp:ListItem>
                         <asp:ListItem Value="LagNyAvtale">Avtale</asp:ListItem>
                         <asp:ListItem Value="LagNyAvtaleType">AvtaleType</asp:ListItem>
-                        <asp:ListItem Value="LagNyBetalingsanmerkning">Betalingsanmerkning</asp:ListItem>
                         <asp:ListItem Value="LagNyFinansieringsselskap">Finansieringsselskap</asp:ListItem>
                         <asp:ListItem Value="LagNyKategori">Kategori</asp:ListItem>
                         <asp:ListItem Value="LagNyLeverandør">Leverandør</asp:ListItem>
@@ -27,18 +26,25 @@
                     </asp:DropDownList>
                     <asp:Button ID="LagNyButton" runat="server" Text="Gå til" PostBackUrl="LagNyAnsatt.aspx" />
                 </div>
-            <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 246px;" dir="ltr">
+            <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 414px;" dir="ltr">
                 <p>Vis</p>
-                <asp:DropDownList ID="VisListe" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="true">
-                    <asp:ListItem Value="VisFinansieringsselskap">Finansieringsselskap</asp:ListItem>
-                    <asp:ListItem Value="VisLeverandør">Leverandør</asp:ListItem>
+                <p>Finansieringsselskap: <asp:DropDownList ID="VisListe1" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="ID">
                 </asp:DropDownList>
-                <asp:Button ID="VisButton" runat="server" Text="Gå til" PostBackUrl="VisFinansieringsselskap.aspx" />
+                <asp:Button ID="VisButton1" runat="server" Text="Gå til" />
+                </p>
+                <p>Leverandør:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <asp:DropDownList ID="VisListe2" runat="server" OnSelectedIndexChanged="VisListe2_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="ID">
+                </asp:DropDownList>
+                <asp:Button ID="VisButton2" runat="server" Text="Gå til" />
+                </p>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn], [ID] FROM [Finansieringsselskap]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn], [ID] FROM [Leverandør]"></asp:SqlDataSource>
+
             </div>
             
         </div>
 
-        <h3>Avtaler</h3>
+        <h3>Avtalervtaler</h3>
         <div id="sokefelt" style="border: thick solid #000000; background-color: #999999; width: 443px;">
             <asp:Button ID="apneSokeFelt" Text="Søk" runat="server" OnClick="apneSokeFelt_Click" />
             <asp:DropDownList ID="DropDownList3" runat="server" Visible="false">
@@ -52,7 +58,7 @@
             <asp:CheckBox ID="AlleCheckbox" runat="server" Visible="false" Text="Alle Avtaler"/>
             <asp:Button ID="lukkeSokeFelt" runat="server" Text="X" OnClick="lukkeSokeFelt_Click" Visible="false" />
         </div>
-        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource3" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" SortExpression="Navn" />
@@ -63,19 +69,19 @@
             </Columns>
         </asp:GridView>
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-    <div>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+    <!--<div>
             <h3>Rapporter</h3>
             <p>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="Navn">
+                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Navn" DataValueField="Navn">
                     <asp:ListItem>Klikk for å velge leverandør</asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
-                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="Beskrivelse" DataValueField="Beskrivelse">
+            <asp:SqlDataSource runat="server" ID="SqlDataSource4" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
+                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource5" DataTextField="Beskrivelse" DataValueField="Beskrivelse">
                     <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
-                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
+                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource5" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
             </p>
-        </div>
+        </div>-->
     </div>
 </asp:Content>

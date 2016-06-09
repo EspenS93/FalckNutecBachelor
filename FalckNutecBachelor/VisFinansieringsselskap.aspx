@@ -10,20 +10,14 @@
 
             <asp:DataList ID="DataList1" runat="server" DataKeyField="ID" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
-                    ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                    <br />
                     Navn:
                     <asp:Label ID="NavnLabel" runat="server" Text='<%# Eval("Navn") %>' />
                     <br />
                     Adresse:
                     <asp:Label ID="AdresseLabel" runat="server" Text='<%# Eval("Adresse") %>' />
                     <br />
-                    Postnr:
-                    <asp:Label ID="PostnrLabel" runat="server" Text='<%# Eval("Postnr") %>' />
-                    <br />
-                    Poststed:
-                    <asp:Label ID="PoststedLabel" runat="server" Text='<%# Eval("Poststed") %>' />
+                    Postadresse:
+                    <asp:Label ID="PostadresseLabel" runat="server" Text='<%# Eval("Postadresse") %>' />
                     <br />
                     Kontaktperson:
                     <asp:Label ID="KontaktpersonLabel" runat="server" Text='<%# Eval("Kontaktperson") %>' />
