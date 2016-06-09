@@ -34,7 +34,7 @@
             <asp:CheckBox ID="AlleCheckbox" runat="server" Visible="false" Text="Alle Avtaler" OnCheckedChanged="AlleCheckbox_CheckedChanged" AutoPostBack="True"/>
             <asp:Button ID="lukkeSokeFelt" runat="server" Text="X" OnClick="lukkeSokeFelt_Click" Visible="false" />
         </div>
-        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
+        <asp:GridView ID="avtaler2" runat="server" DataSourceID="SqlDataSource4" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="avtaler2_SelectedIndexChanged" OnRowDataBound = "OnRowDataBound" AllowSorting="True" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" SortExpression="Navn" />
@@ -46,7 +46,7 @@
         </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentMineAvtaler" SelectCommandType="StoredProcedure">
             </asp:SqlDataSource>
-
+            <%SqlDataSource4.SelectParameters.Add("AnsattID", User.Identity.GetUserId().ToString());%>
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         </div>

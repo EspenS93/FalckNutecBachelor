@@ -94,12 +94,12 @@ namespace FalckNutecBachelor
         {
             if (AlleCheckbox.Checked)
             {
-                avtaler2.DataSourceID = "SqlDataSource4";
+                avtaler2.DataSourceID = "SqlDataSource1";
                 avtaler2.DataBind();
             }
             else
             {
-                avtaler2.DataSourceID = "SqlDataSource1";
+                avtaler2.DataSourceID = "SqlDataSource4";
                 avtaler2.DataBind();
             }
         }

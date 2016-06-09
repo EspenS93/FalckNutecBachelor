@@ -30,11 +30,10 @@
             <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 246px;" dir="ltr">
                 <p>Vis</p>
                 <asp:DropDownList ID="VisListe" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="true">
-                    <asp:ListItem Value="VisAvtale" Selected="True">Avtale</asp:ListItem> 
                     <asp:ListItem Value="VisFinansieringsselskap">Finansieringsselskap</asp:ListItem>
                     <asp:ListItem Value="VisLeverandør">Leverandør</asp:ListItem>
                 </asp:DropDownList>
-                <asp:Button ID="VisButton" runat="server" Text="Gå til" PostBackUrl="VisAvtale.aspx" />
+                <asp:Button ID="VisButton" runat="server" Text="Gå til" PostBackUrl="VisFinansieringsselskap.aspx" />
             </div>
             
         </div>
