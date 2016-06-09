@@ -5,13 +5,10 @@
     <div>
         <h1>Avtale</h1>
         <div>
-
-
-
             <asp:DataList ID="DataList1" runat="server" DataKeyField="ID" DataSourceID="SqlDataSource1">
                 <ItemTemplate>
-                    Beskrivelse:
-                    <asp:Label ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Beskrivelse") %>' />
+                    Navn:
+                    <asp:Label ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Navn") %>' />
                     <br />
                     AvtaleType:
                     <asp:Label ID="AvtaleTypeLabel" runat="server" Text='<%# Eval("AvtaleType") %>' />
@@ -59,7 +56,6 @@
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkDownload" runat="server" Text="Download" OnClick="DownloadFile" CommandArgument='<%# Eval("ID") %>'></asp:LinkButton>
                         </ItemTemplate>
-
                         <ItemStyle HorizontalAlign="Center"></ItemStyle>
                     </asp:TemplateField>
                 </Columns>
@@ -73,7 +69,7 @@
                     <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentEnAvtaleOgPDF" SelectCommandType="StoredProcedure">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentEnAvtale" SelectCommandType="StoredProcedure">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" />
                 </SelectParameters>
