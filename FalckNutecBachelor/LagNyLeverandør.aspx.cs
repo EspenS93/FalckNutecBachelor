@@ -31,10 +31,10 @@ namespace FalckNutecBachelor
             SqlCommand ins = new SqlCommand("LagNyLeverandør", con);
             ins.CommandType = CommandType.StoredProcedure;
             ins.Parameters.AddWithValue("@Navn", NavnText.Text);
-            ins.Parameters.AddWithValue("@Underleverandør", ULevDDL.Text);
-            ins.Parameters.AddWithValue("@Organisasjonsnr", OrgNrText.Text);
+            ins.Parameters.AddWithValue("@Underleverandør", int.Parse(ULevDDL.SelectedValue));
+            ins.Parameters.AddWithValue("@Organisasjonsnr", int.Parse(OrgNrText.Text));
             ins.Parameters.AddWithValue("@Adresse", AdresseText.Text);
-            ins.Parameters.AddWithValue("@Postadresse", PostText.Text);
+            ins.Parameters.AddWithValue("@PostAdresse", PostText.Text);
             ins.Parameters.AddWithValue("@Kontaktperson", KontaktText.Text);
             ins.Parameters.AddWithValue("@Telefonnr", TLFText.Text);
             ins.Parameters.AddWithValue("@Telefaks", FaxText.Text);

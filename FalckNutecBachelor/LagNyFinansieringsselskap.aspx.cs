@@ -35,7 +35,7 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Postadresse", PostadresseText.Text);
             ins.Parameters.AddWithValue("@KontaktPerson", KontaktText.Text);
             ins.Parameters.AddWithValue("@Telefonnr", TLFText.Text);
-            ins.Parameters.AddWithValue("@Telefaksnr", FaksText.Text);
+            ins.Parameters.AddWithValue("@TeleFaksnr", FaksText.Text);
             ins.Parameters.AddWithValue("@Epost", EpostText.Text);
             con.Open();
             try
