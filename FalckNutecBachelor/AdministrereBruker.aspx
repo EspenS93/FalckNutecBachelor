@@ -37,7 +37,7 @@
             </asp:DataList>
             <p>Nåverende Passord: <asp:Textbox ID="pass" runat="server" TextMode="Password" OnTextChanged="DataList1_SelectedIndexChanged"></asp:Textbox></p>
             <p>Nytt Passord: <asp:Textbox ID="NyPass1" runat="server" TextMode="Password" ></asp:Textbox></p>
-            <p>Nytt Passord igjen: <asp:Textbox ID="NyPass2" runat="server" TextMode="Password"></asp:Textbox></p>
+            <p>Nytt Passord igjen: <asp:Textbox ID="NyPass2" runat="server" TextMode="Password" ></asp:Textbox></p>
             <asp:Button ID="EndreKnapp" runat="server" Visible="false" Text="Endre" OnClick="EndreKnapp_Click" />
             <asp:Label ID="Melding" runat="server" Visible="false"></asp:Label>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAnsatt" SelectCommandType="StoredProcedure">
