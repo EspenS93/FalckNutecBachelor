@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -96,6 +97,18 @@ namespace FalckNutecBachelor
             DropDownList3.Visible = false;
             AlleCheckbox.Visible = false;
             lukkeSokeFelt.Visible = false;
+        }
+
+        protected void Mail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WebMail.Send(to: "espenmarius@hotmail.com", subject: "test", body: "heisann");
+            }
+            catch
+            {
+               throw;
+            }
         }
     }
 }
