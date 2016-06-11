@@ -16,25 +16,6 @@ namespace FalckNutecBachelor
 	{
             //Mangler exceptions
         SqlConnection con;
-        string dato;
-        protected void upload()
-        {
-            foreach (HttpPostedFile postedFile in pdf.PostedFiles)
-            {
-                Stream fs = postedFile.InputStream;
-                BinaryReader br = new BinaryReader(fs);
-                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-
-                SqlCommand ins1 = new SqlCommand("LeggTilPDF", con);
-                ins1.CommandType = CommandType.StoredProcedure;
-                ins1.Parameters.AddWithValue("@AvtaleNavn", NavnText.Text);
-                ins1.Parameters.AddWithValue("@Fil", bytes);
-                ins1.Parameters.AddWithValue("@PDFNavn", postedFile.FileName);
-                ins1.Parameters.AddWithValue("@ContentType", postedFile.ContentType);
-                ins1.ExecuteNonQuery();
-            }
-
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!WebSecurity.IsAuthenticated)
@@ -44,19 +25,50 @@ namespace FalckNutecBachelor
             con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
             "User Id=dbUser;" + "Password=Bachelor2016;");
-            
+
         }
-        protected void KalenderTrykk1(object sender, EventArgs e) // FUNKER IKKE
+        protected void LagMemo()
         {
-            StartDatoText.Text = Calendar1.SelectedDate.ToShortDateString();
-            Calendar1.Visible = false;
+            SqlCommand ins = new SqlCommand("LagNyMemo", con);
+            ins.CommandType = CommandType.StoredProcedure;
+            ins.Parameters.AddWithValue("@Avtale", NavnText.Text);
+            ins.Parameters.AddWithValue("@AnsattID", (int)WebSecurity.CurrentUserId);
+            ins.Parameters.AddWithValue("@Memo", SkrivMemo.Text);
+            try
+            {
+                ins.ExecuteNonQuery();
+            }
+            catch (SqlException sqlEX)
+            {
+                throw;
+            }
         }
-        protected void KalenderTrykk2(object sender, EventArgs e) // FUNKER IKKE
+        protected void upload()
         {
-            SluttDatoText.Text = Calendar2.SelectedDate.ToShortDateString();
-            Calendar2.Visible = false;
+            foreach (HttpPostedFile postedFile in pdf.PostedFiles)
+            {
+                Stream fs = postedFile.InputStream;
+                BinaryReader br = new BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
+                SqlCommand ins = new SqlCommand("LeggTilPDF", con);
+                ins.CommandType = CommandType.StoredProcedure;
+                ins.Parameters.AddWithValue("@AvtaleNavn", NavnText.Text);
+                ins.Parameters.AddWithValue("@Fil", bytes);
+                ins.Parameters.AddWithValue("@PDFNavn", postedFile.FileName);
+                ins.Parameters.AddWithValue("@ContentType", postedFile.ContentType);
+                try
+                {
+                    ins.ExecuteNonQuery();
+                }
+                catch (SqlException sqlEX)
+                {
+                    throw;
+                }
+            }
+
         }
-        protected void SubmitKnapp_Click(object sender, EventArgs e)
+        protected void LagAvtale()
         {
             SqlCommand ins = new SqlCommand("LagNyAvtale", con);
             ins.CommandType = CommandType.StoredProcedure;
@@ -72,21 +84,26 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@SluttDato", Calendar1.SelectedDate);
             ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
-            SqlCommand ins2 = new SqlCommand("LagNyMemo", con);
-            ins2.CommandType = CommandType.StoredProcedure;
-            ins2.Parameters.AddWithValue("@Avtale", NavnText.Text);
-            ins2.Parameters.AddWithValue("@AnsattID", (int)WebSecurity.CurrentUserId);
-            ins2.Parameters.AddWithValue("@Memo", SkrivMemo.Text);
-
-            //PDF
-            
-            con.Open();
             try
             {
                 ins.ExecuteNonQuery();
-                if (SkrivMemo.Text != null) { 
-                    ins2.ExecuteNonQuery();
-                 }
+            }
+            catch (SqlException sqlEX)
+            {
+                throw;
+            }
+        }
+        protected void SubmitKnapp_Click(object sender, EventArgs e)
+        {
+                
+            con.Open();
+            try
+            {
+                LagAvtale();
+                if (SkrivMemo.Text != null)
+                {
+                    LagMemo();
+                }
                 if (pdf.HasFiles)
                 {
                     upload();
@@ -107,11 +124,23 @@ namespace FalckNutecBachelor
 
         protected void KalenderKnapp_Click(object sender, EventArgs e)
         {
+            Calendar2.Visible = false;
             Calendar1.Visible = true;
         }
         protected void KalenderKnapp2_Click(object sender, EventArgs e)
         {
+            Calendar1.Visible = false;
             Calendar2.Visible = true;
+        }
+        protected void KalenderTrykk1(object sender, EventArgs e) // FUNKER IKKE
+        {
+            StartDatoText.Text = Calendar1.SelectedDate.ToShortDateString();
+            Calendar1.Visible = false;
+        }
+        protected void KalenderTrykk2(object sender, EventArgs e) // FUNKER IKKE
+        {
+            SluttDatoText.Text = Calendar2.SelectedDate.ToShortDateString();
+            Calendar2.Visible = false;
         }
     }
 }
