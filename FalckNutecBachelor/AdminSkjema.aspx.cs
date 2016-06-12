@@ -98,17 +98,5 @@ namespace FalckNutecBachelor
             AlleCheckbox.Visible = false;
             lukkeSokeFelt.Visible = false;
         }
-
-        protected void Mail_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                WebMail.Send(to: "espenmarius@hotmail.com", subject: "test", body: "heisann");
-            }
-            catch
-            {
-               throw;
-            }
-        }
     }
 }

@@ -44,7 +44,7 @@
             
         </div>
 
-        <h3>Avtalervtaler</h3>
+        <h3>Avtaler</h3>
         <div id="sokefelt" style="border: thick solid #000000; background-color: #999999; width: 443px;">
             <asp:Button ID="apneSokeFelt" Text="Søk" runat="server" OnClick="apneSokeFelt_Click" />
             <asp:DropDownList ID="DropDownList3" runat="server" Visible="false">
@@ -69,6 +69,5 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-        <asp:Button ID="Mail" runat="server" Text="Send Mail" OnClick="Mail_Click" />
     </div>
 </asp:Content>
