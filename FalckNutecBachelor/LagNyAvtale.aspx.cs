@@ -81,7 +81,7 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Lokasjon", DropDownList6.Text);
             ins.Parameters.AddWithValue("@Status", StatusList.Text);
             ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate);
-            ins.Parameters.AddWithValue("@SluttDato", Calendar1.SelectedDate);
+            ins.Parameters.AddWithValue("@SluttDato", Calendar2.SelectedDate);
             ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
             try

@@ -275,6 +275,7 @@
     <Content Include="LagNyLokasjon.aspx" />
     <Content Include="LagNyMemo.aspx" />
     <Content Include="LagNySeksjon.aspx" />
+    <Content Include="Pictures\FalckN_logo_pos_trans.png" />
     <Content Include="Registrering.aspx" />
     <Content Include="LagNyKategori.aspx" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
@@ -661,7 +662,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Pictures\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
