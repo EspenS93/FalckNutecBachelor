@@ -68,20 +68,7 @@
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
         </asp:GridView>
-        <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-    <!--<div>
-            <h3>Rapporter</h3>
-            <p>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="Navn" DataValueField="Navn">
-                    <asp:ListItem>Klikk for å velge leverandør</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:SqlDataSource runat="server" ID="SqlDataSource4" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
-                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource5" DataTextField="Beskrivelse" DataValueField="Beskrivelse">
-                    <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
-                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource5" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
-            </p>
-        </div>-->
+        <asp:Button ID="Mail" runat="server" Text="Send Mail" OnClick="Mail_Click" />
     </div>
 </asp:Content>
