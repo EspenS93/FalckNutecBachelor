@@ -1,24 +1,20 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyBruker.aspx.cs" Inherits="FalckNutecBachelor.LagNyBruker" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Ny Bruker" AutoEventWireup="true" CodeBehind="LagNyBruker.aspx.cs" Inherits="FalckNutecBachelor.LagNyBruker" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <head>
-        <title>Ny Bruker</title>
-    </head>
-
-    <form id="form1">
 
         <h1>Ny Bruker</h1>
-        <p>//Skal kunne lage nye og redigere eksisterende brukere gjennom Admin</p>
-        <p>
-            NOnr:
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOnr" DataValueField="NOnr">
-                </asp:DropDownList>
+        <p style="width: 450px">Her kan du lage nye og redigere eksisterende brukere gjennom Admin</p>
+    <table style="width: 556px; height: 178px;">
+        <tr>
+        <td style="width: 110px" ><p style="text-align: right; width: 110px;">NOnr:</p></td>
+        <td style="width: 442px"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="NOnr" DataValueField="NOnr"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>"  SelectCommand="SELECT [NOnr] FROM [Ansatte]"></asp:SqlDataSource>
-        </p>
-        <p>
-            Passord:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 110px"><p style="text-align: right; width: 110px;">Passord:</p></td>
+        <td style="width: 442px"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <asp:CompareValidator ID="CompareValidator1" runat="server"
                 ControlToValidate="TextBox2"
                 CssClass="ValidationError"
@@ -31,21 +27,23 @@
                 CssClass="ValidationError"
                 ToolTip="Compare Password is a REQUIRED field">
             </asp:RequiredFieldValidator>
-        </p>
-        <p>
-            Gjenta Passord:&nbsp;
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 110px"><p style="text-align: right; width: 110px;">Gjenta Passord:</p></td>
+        <td style="width: 442px"><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
                 ErrorMessage="&laquo; (Required)"
                 ControlToValidate="TextBox3"
                 CssClass="ValidationError"
                 ToolTip="Compare Password is a REQUIRED field">
             </asp:RequiredFieldValidator>
-        </p>
+        </td>
+        </tr>
+        </table>
         <asp:Button ID="Button1" runat="server" Text="Lag Ny Bruker" OnClick="Button1_Click" />
         <br />
         <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
 
-    </form>
 </asp:Content>
 
