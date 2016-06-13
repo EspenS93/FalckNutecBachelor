@@ -84,7 +84,14 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@SluttDato", Calendar2.SelectedDate.ToShortDateString());
             ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
-            ins.Parameters.AddWithValue("@Frist", int.Parse(FristText.Text));
+            try
+            {
+                ins.Parameters.AddWithValue("@Frist", int.Parse(FristText.Text));
+            }
+            catch
+            {
+                ins.Parameters.AddWithValue("@Frist", 0);
+            }
             try
             {
                 ins.ExecuteNonQuery();
