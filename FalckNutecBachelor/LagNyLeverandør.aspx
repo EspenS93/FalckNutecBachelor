@@ -7,11 +7,11 @@
             <h1>Ny leverandør </h1>
             <table>
                 <tr>
-            <td style="width: 150px"><p style="text-align: right; width: 150px;">Navn:</p></td>
+            <td style="width: 150px"><p style="text-align: left; width: 150px;">Navn:</p></td>
             <td><p><asp:TextBox ID="NavnText" runat="server" OnTextChanged="NavnText_TextChanged"></asp:TextBox></p></td>
                     </tr>
                 <tr>
-            <td style="width: 150px"><p style="text-align: right; width: 150px;">Underleverandør:</p></td>
+            <td style="width: 150px"><p style="text-align: left; width: 150px;">Underleverandør:</p></td>
             <td><p><asp:DropDownList ID="ULevDDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="ID" AutoPostBack="True"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn], [ID] FROM [Leverandør]"></asp:SqlDataSource>
             </p></td>
