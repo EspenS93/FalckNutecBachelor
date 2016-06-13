@@ -34,6 +34,14 @@ namespace FalckNutecBachelor
         {
         }
 
+        protected void VisListe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VisButton1.PostBackUrl = "VisFinansieringsselskapLes.aspx?FinansieringsselskapID=" + VisListe1.SelectedValue;
+        }
+        protected void VisListe2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VisButton2.PostBackUrl = "VisLeverandørLes.aspx?LeverandørID=" + VisListe2.SelectedValue;
+        }
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {

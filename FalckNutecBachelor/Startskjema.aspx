@@ -19,6 +19,21 @@
         <asp:Button ID="Button3" runat="server" Text="Finansieringsselskap" PostBackUrl="~/LagNyFinansieringsselskap.aspx" />
             </p>
         </div>
+          <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 414px;" dir="ltr">
+                <p>Vis</p>
+                <p>Finansieringsselskap: <asp:DropDownList ID="VisListe1" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="ID">
+                </asp:DropDownList>
+                <asp:Button ID="VisButton1" runat="server" Text="Gå til" />
+                </p>
+                <p>Leverandør:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <asp:DropDownList ID="VisListe2" runat="server" OnSelectedIndexChanged="VisListe2_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="ID">
+                </asp:DropDownList>
+                <asp:Button ID="VisButton2" runat="server" Text="Gå til" />
+                </p>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn], [ID] FROM [Finansieringsselskap]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn], [ID] FROM [Leverandør]"></asp:SqlDataSource>
+
+            </div>
         <div>
             <h3>Avtaler</h3>
         <div id="sokefelt" style="border: thick solid #000000; background-color: #999999; width: 443px;">
