@@ -10,7 +10,7 @@
 namespace FalckNutecBachelor {
     
     
-    public partial class VisLeverandør {
+    public partial class VisLeverandørLes {
         
         /// <summary>
         /// DataList1 control.
@@ -20,24 +20,6 @@ namespace FalckNutecBachelor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList DataList1;
-        
-        /// <summary>
-        /// EndreKnapp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EndreKnapp;
-        
-        /// <summary>
-        /// Melding control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Melding;
         
         /// <summary>
         /// SqlDataSource1 control.

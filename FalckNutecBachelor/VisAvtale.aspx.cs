@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
+using System.Web.Security;
 using System.Web.UI.WebControls;
 using WebMatrix.WebData;
 
@@ -19,7 +17,15 @@ namespace FalckNutecBachelor
             {
                 Response.Redirect("Login");
             }
-            con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
+            else
+            {
+                if (Roles.IsUserInRole("Reader"))
+                {
+                    //ACCESS DENIED SIDE
+                    Response.Redirect("StartskjemaLes");
+                }
+            }
+                con = new SqlConnection("Data Source = WIN-QT7KGL9HG25\\SQLEXPRESS;" +
             "Initial Catalog = AvtaleDatabase;" +
             "User Id=dbUser;" + "Password=Bachelor2016;");
             }

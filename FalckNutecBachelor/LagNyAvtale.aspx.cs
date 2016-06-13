@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebMatrix.WebData;
+
 
 namespace FalckNutecBachelor
 {
@@ -80,10 +77,18 @@ namespace FalckNutecBachelor
             ins.Parameters.AddWithValue("@Ansvarlig", DropDownList5.Text);
             ins.Parameters.AddWithValue("@Lokasjon", DropDownList6.Text);
             ins.Parameters.AddWithValue("@Status", StatusList.Text);
-            ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate);
-            ins.Parameters.AddWithValue("@SluttDato", Calendar2.SelectedDate);
+            ins.Parameters.AddWithValue("@StartDato", Calendar1.SelectedDate.ToShortDateString());
+            ins.Parameters.AddWithValue("@SluttDato", Calendar2.SelectedDate.ToShortDateString());
             ins.Parameters.AddWithValue("@Ansatt", WebSecurity.CurrentUserName);
             ins.Parameters.AddWithValue("@Forny", CheckBox1.Checked);
+            try
+            {
+                ins.Parameters.AddWithValue("@Frist", int.Parse(FristText.Text));
+            }
+            catch
+            {
+                ins.Parameters.AddWithValue("@Frist", 0);
+            }
             try
             {
                 ins.ExecuteNonQuery();

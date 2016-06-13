@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Startskjema" AutoEventWireup="true" CodeBehind="Startskjema.aspx.cs" Inherits="FalckNutecBachelor.Startskjema" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Startskjema" AutoEventWireup="true" CodeBehind="StartskjemaLes.aspx.cs" Inherits="FalckNutecBachelor.StartskjemaLes" EnableEventValidation="false" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -9,17 +9,7 @@
 
     <form id="form1">
         <h1>Startskjema</h1>
-        <div>
-            <p>Velg registeringsskjema</p>
-            <p>
-                <asp:Button ID="Button1" runat="server" Text="Avtaler" PostBackUrl="~/LagNyAvtale.aspx" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Leverandører" PostBackUrl="~/LagNyLeverandør.aspx" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button3" runat="server" Text="Finansieringsselskap" PostBackUrl="~/LagNyFinansieringsselskap.aspx" />
-            </p>
-        </div>
-          <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 414px;" dir="ltr">
+         <div style="position: relative; z-index: auto; top: 0px; left: 13px; width: 414px;" dir="ltr">
                 <p>Vis</p>
                 <p>Finansieringsselskap: <asp:DropDownList ID="VisListe1" runat="server" OnSelectedIndexChanged="VisListe_SelectedIndexChanged" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Navn" DataValueField="ID">
                 </asp:DropDownList>
@@ -59,13 +49,6 @@
                 <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             </Columns>
         </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentMineAvtaler" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:Parameter Name="AnsattID" Type="Int32" />
-                </SelectParameters>         
-            </asp:SqlDataSource>
-            <%SqlDataSource4.SelectParameters["AnsattID"].DefaultValue = WebMatrix.WebData.WebSecurity.CurrentUserId.ToString(); ;
-                SqlDataSource4.DataBind();avtaler2.DataBind(); %>
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         </div>

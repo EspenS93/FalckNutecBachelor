@@ -57,6 +57,10 @@
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Kategori] FROM [Kategorier]"></asp:SqlDataSource></td>
                     </tr>
+            <tr>
+            <td style="width: 150px"><p style="text-align: left; width: 150px">Frist:</p></td>
+                <td><asp:TextBox ID="FristText" runat="server" TextMode="Number" placeholder="Måneder" ></asp:TextBox>
+                    </tr>
                </table>
                <p style="width: 650px">StartDato:
             <asp:TextBox ID="StartDatoText" runat="server"></asp:TextBox>
