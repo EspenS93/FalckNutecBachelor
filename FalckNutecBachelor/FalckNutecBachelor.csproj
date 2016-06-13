@@ -265,18 +265,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="LagNyBruker.aspx" />
     <Content Include="LagNyAnsatt.aspx" />
     <Content Include="LagNyAvtale.aspx" />
     <Content Include="LagNyAvtaletype.aspx" />
-    <Content Include="LagNyBetalingsanmerkning.aspx" />
     <Content Include="LagNyFinansieringsselskap.aspx" />
     <Content Include="LagNyLeverandør.aspx" />
     <Content Include="LagNyLokasjon.aspx" />
-    <Content Include="LagNyMemo.aspx" />
     <Content Include="LagNySeksjon.aspx" />
     <Content Include="Pictures\FalckN_logo_pos_trans.png" />
-    <Content Include="Registrering.aspx" />
     <Content Include="LagNyKategori.aspx" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -496,13 +492,6 @@
     <Compile Include="ErrorPages\Oops.aspx.designer.cs">
       <DependentUpon>Oops.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LagNyBruker.aspx.cs">
-      <DependentUpon>LagNyBruker.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LagNyBruker.aspx.designer.cs">
-      <DependentUpon>LagNyBruker.aspx</DependentUpon>
-    </Compile>
     <Compile Include="LagNyFinansieringsselskap.aspx.cs">
       <DependentUpon>LagNyFinansieringsselskap.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -541,13 +530,6 @@
     <Compile Include="LagNyAvtaletype.aspx.designer.cs">
       <DependentUpon>LagNyAvtaletype.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LagNyBetalingsanmerkning.aspx.cs">
-      <DependentUpon>LagNyBetalingsanmerkning.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LagNyBetalingsanmerkning.aspx.designer.cs">
-      <DependentUpon>LagNyBetalingsanmerkning.aspx</DependentUpon>
-    </Compile>
     <Compile Include="LagNyLeverandør.aspx.cs">
       <DependentUpon>LagNyLeverandør.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -562,13 +544,6 @@
     <Compile Include="LagNyLokasjon.aspx.designer.cs">
       <DependentUpon>LagNyLokasjon.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LagNyMemo.aspx.cs">
-      <DependentUpon>LagNyMemo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LagNyMemo.aspx.designer.cs">
-      <DependentUpon>LagNyMemo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="LagNySeksjon.aspx.cs">
       <DependentUpon>LagNySeksjon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -582,13 +557,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Registrering.aspx.cs">
-      <DependentUpon>Registrering.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registrering.aspx.designer.cs">
-      <DependentUpon>Registrering.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
