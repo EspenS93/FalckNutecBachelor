@@ -24,6 +24,27 @@ namespace FalckNutecBachelor
             "User Id=dbUser;" + "Password=Bachelor2016;");
             }
 
+
+        protected void updateAvtale()
+        {
+            SqlCommand upd = new SqlCommand("UpdateAvtale", con);
+            upd.CommandType = CommandType.StoredProcedure;
+            upd.Parameters.AddWithValue("@Navn", ((TextBox)DataList1.Items[0].FindControl("NavnLabel")).Text);
+            upd.Parameters.AddWithValue("@AvtaleType", ((DropDownList)DataList1.Items[0].FindControl("AvtaleTypeLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Kategori", ((DropDownList)DataList1.Items[0].FindControl("KategoriLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Finansieringsselskap", ((DropDownList)DataList1.Items[0].FindControl("FinansieringsselskapLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Leverandør", ((DropDownList)DataList1.Items[0].FindControl("LeverandørLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Ansvarlig", ((DropDownList)DataList1.Items[0].FindControl("AnsvarligLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Lokasjon", ((DropDownList)DataList1.Items[0].FindControl("LokasjonLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@Status", ((DropDownList)DataList1.Items[0].FindControl("StatusLabel")).SelectedValue);
+            upd.Parameters.AddWithValue("@StartDato", ((TextBox)DataList1.Items[0].FindControl("StartDatoLabel")).Text);
+            upd.Parameters.AddWithValue("@SluttDato", ((TextBox)DataList1.Items[0].FindControl("SluttDatoLabel")).Text);
+            upd.Parameters.AddWithValue("@Registrert_AvLabel", ((TextBox)DataList1.Items[0].FindControl("AnsattRegistrertLabel")).Text);
+            upd.Parameters.AddWithValue("@FornyAuto", ((TextBox)DataList1.Items[0].FindControl("FornyAutoLabel")).Text);
+            upd.Parameters.AddWithValue("@Frist", ((TextBox)DataList1.Items[0].FindControl("FristLabel")).Text);
+            upd.ExecuteNonQuery();
+        }
+
         protected void MemoKnapp_Click(object sender, EventArgs e)
         {
             Label avtale = (Label)DataList1.Items[0].FindControl("BeskrivelseLabel");
@@ -80,5 +101,26 @@ namespace FalckNutecBachelor
             Response.End();
         }
 
+        protected void EndreKnapp_Click(object sender, EventArgs e)
+        {
+        
+            con.Open();
+            try
+            {
+                updateAvtale();
+                Melding.Visible = true;
+                Melding.Text = "Endringen er fullført";
+            }
+            catch (SqlException SQLEX)
+            {
+                throw;
+            }
+        }
+
+        protected void DataList1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            EndreKnapp.Visible = true;
+        }
+
     }
-}
+ }

@@ -69,5 +69,7 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+        <br />
+        <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent avtale" onClick="AvtaleKnapp_Click"/>
     </div>
 </asp:Content>

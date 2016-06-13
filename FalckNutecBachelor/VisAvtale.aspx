@@ -5,76 +5,89 @@
     <div>
         <h1>Avtale</h1>
         <div>
-            <asp:DataList ID="DataList1" runat="server" DataKeyField="ID" DataSourceID="SqlDataSource1">
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="DataList1_SelectedIndexChanged1">
+                <EditItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False"  />
                 <ItemTemplate>
-                    Navn:
-                    <asp:Label ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Navn") %>' />
+                    Beskrivelse:
+                    <asp:TextBox ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Beskrivelse") %>' />
                     <br />
-                    AvtaleType:
-                    <asp:Label ID="AvtaleTypeLabel" runat="server" Text='<%# Eval("AvtaleType") %>' />
+                    AvtaleTypeID:
+                    <asp:DropDownList ID="AvtaleTypeIDLabel" runat="server" Text='<%# Eval("AvtaleTypeID") %>' DataSourceID="SqlDataSource5" DataTextField="AvtaleType" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [AvtaleType] FROM [AvtaleType]"></asp:SqlDataSource>
                     <br />
-                    Kategori:
-                    <asp:Label ID="KategoriLabel" runat="server" Text='<%# Eval("Kategori") %>' />
+                    KategoriID:
+                    <asp:DropDownList ID="KategoriIDLabel" runat="server" Text='<%# Eval("KategoriID") %>' DataSourceID="SqlDataSource6" DataTextField="Kategori" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Kategori] FROM [Kategorier]"></asp:SqlDataSource>
                     <br />
-                    Finansieringsselskap:
-                    <asp:Label ID="FinansieringsselskapLabel" runat="server" Text='<%# Eval("Finansieringsselskap") %>' />
+                    LeverandørID:
+                    <asp:DropDownList ID="LeverandørIDLabel" runat="server" Text='<%# Eval("LeverandørID") %>' DataSourceID="SqlDataSource7" DataTextField="Navn" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Navn] FROM [Leverandør]"></asp:SqlDataSource>
                     <br />
-                    Leverandør:
-                    <asp:Label ID="LeverandørLabel" runat="server" Text='<%# Eval("Leverandør") %>' />
+                    FinansieringsselskapID:
+                    <asp:DropDownList ID="FinansieringsselskapIDLabel" runat="server" Text='<%# Eval("FinansieringsselskapID") %>' DataSourceID="SqlDataSource8" DataTextField="Navn" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Navn] FROM [Finansieringsselskap]"></asp:SqlDataSource>
                     <br />
-                    Ansvarlig:
-                    <asp:Label ID="AnsvarligLabel" runat="server" Text='<%# Eval("Ansvarlig") %>' />
+                    AnsvarligID:
+                    <asp:DropDownList ID="AnsvarligIDLabel" runat="server" Text='<%# Eval("AnsvarligID") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], (SELECT [Fornavn]+', '+ [Etternavn]) FROM [Ansatte]"></asp:SqlDataSource>
                     <br />
-                    Lokasjon:
-                    <asp:Label ID="LokasjonLabel" runat="server" Text='<%# Eval("Lokasjon") %>' />
+                    LokasjonID:
+                    <asp:DropDownList ID="LokasjonIDLabel" runat="server" Text='<%# Eval("LokasjonID") %>' DataSourceID="SqlDataSource10" DataTextField="Lokasjon" DataValueField="ID" />
+                    <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Lokasjon] FROM [Lokasjon]"></asp:SqlDataSource>
                     <br />
-                    Status:
-                    <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
+                    stage:
+                    <asp:DropDownList ID="stageLabel" runat="server" Text='<%# Eval("stage") %>' >
+                        <asp:ListItem>Aktiv</asp:ListItem>
+                        <asp:ListItem>Utgående</asp:ListItem>
+                        <asp:ListItem>Utgått</asp:ListItem>
+                    </asp:DropDownList>
                     <br />
                     StartDato:
-                    <asp:Label ID="StartDatoLabel" runat="server" Text='<%# Eval("StartDato") %>' />
+                    <asp:TextBox ID="StartDatoLabel" runat="server" Text='<%# Eval("StartDato") %>' />
                     <br />
                     SluttDato:
-                    <asp:Label ID="SluttDatoLabel" runat="server" Text='<%# Eval("SluttDato") %>' />
+                    <<asp:TextBox ID="SluttDatoLabel" runat="server" Text='<%# Eval("SluttDato") %>' />
                     <br />
-                    Registrert Av:
-                    <asp:Label ID="Registrert_AvLabel" runat="server" Text='<%# Eval("[Registrert Av]") %>' />
+                    AnsattRegistrert:
+                   <asp:DropDownList ID="AnsattRegistrertLabel" runat="server" Text='<%# Eval("AnsattRegistrert") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" />
                     <br />
                     FornyAuto:
-                    <asp:Label ID="FornyAutoLabel" runat="server" Text='<%# Eval("FornyAuto") %>' />
+                    <asp:CheckBox ID="FornyAutoLabel" runat="server" Text='<%# Eval("FornyAuto") %>' />
+                    <br />
+                    Frist:
+                    <asp:TextBox ID="FristLabel" runat="server" Text='<%# Eval("Frist") %>' />
                     <br />
                     <br />
                 </ItemTemplate>
             </asp:DataList>
+
+            
+            <asp:Button ID="EndreKnapp" runat="server" Visible="false" Text="Endre" OnClick="EndreKnapp_Click" />
+            <asp:Label ID="Melding" runat="server" Visible="false"></asp:Label>
+
             <asp:GridView ID="GridView1" runat="server" HeaderStyle-BackColor="#3AC0F2" HeaderStyle-ForeColor="White"
                 RowStyle-BackColor="#A1DCF2" AlternatingRowStyle-BackColor="White" AlternatingRowStyle-ForeColor="#000"
-                AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
+                AutoGenerateColumns="False" DataSourceID="SqlDataSource3" DataKeyNames="ID">
                 <AlternatingRowStyle BackColor="White" ForeColor="#000000"></AlternatingRowStyle>
                 <Columns>
-                    <asp:BoundField DataField="Navn" HeaderText="File Name" />
-                    <asp:TemplateField ItemStyle-HorizontalAlign="Center">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkDownload" runat="server" Text="Download" OnClick="DownloadFile" CommandArgument='<%# Eval("ID") %>'></asp:LinkButton>
-                        </ItemTemplate>
-                        <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                    </asp:TemplateField>
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                    <asp:BoundField DataField="AvtaleID" HeaderText="AvtaleID" SortExpression="AvtaleID" />
+                    <asp:BoundField DataField="Navn" HeaderText="Navn" SortExpression="Navn" />
+                    <asp:BoundField DataField="ContentType" HeaderText="ContentType" SortExpression="ContentType" />
                 </Columns>
 
                 <HeaderStyle BackColor="#3AC0F2" ForeColor="White"></HeaderStyle>
 
                 <RowStyle BackColor="#A1DCF2"></RowStyle>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentPDF" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" />
-                </SelectParameters>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [PDF]" OnSelecting="SqlDataSource3_Selecting">
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentEnAvtale" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" />
-                </SelectParameters>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Beskrivelse], [AvtaleTypeID], [KategoriID], [LeverandørID], [FinansieringsselskapID], [AnsvarligID], [LokasjonID], [stage], [StartDato], [SluttDato], [AnsattRegistrert], [FornyAuto], [Frist] FROM [Avtaler]" OnSelecting="SqlDataSource1_Selecting">
             </asp:SqlDataSource>
+            
+
         </div>
+
         <div>
             <h2>Skriv Memo:</h2>
             <asp:TextBox ID="SkrivMemo" runat="server" TextMode="MultiLine"></asp:TextBox>
@@ -82,21 +95,26 @@
         </div>
         <div>
             <h2>Memo: </h2>
-            <asp:DataList ID="memo" runat="server" DataSourceID="SqlDataSource2" BorderColor="Black" GridLines="Both">
+            <asp:DataList ID="memo" runat="server" DataSourceID="SqlDataSource2" BorderColor="Black" GridLines="Both" DataKeyField="ID">
                 <ItemTemplate>
-                    <asp:Label ID="FornavnLabel" runat="server" Text='<%# Eval("Fornavn") %>' />
-                    &nbsp
-                   <asp:Label ID="EtternavnLabel" runat="server" Text='<%# Eval("Etternavn") %>' />
-                    &nbsp
+                    ID:
+                   <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+                    <br />
+                    AvtaleID: <asp:Label ID="AvtaleIDLabel" runat="server" Text='<%# Eval("AvtaleID") %>' />
+                    <br />
+                    AnsattID:
+                   <asp:Label ID="AnsattIDLabel" runat="server" Text='<%# Eval("AnsattID") %>' />
+                    <br />
+                    Memo:
+                    <asp:Label ID="MemoLabel" runat="server" Text='<%# Eval("Memo") %>' />
+                    <br />
+                    datetime:
                    <asp:Label ID="datetimeLabel" runat="server" Text='<%# Eval("datetime") %>' />
                     <br />
-                    <asp:Label ID="MemoLabel" runat="server" Text='<%# Eval("Memo") %>' />
+                    <br />
                 </ItemTemplate>
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentMemo" SelectCommandType="StoredProcedure">
-                <SelectParameters>
-                    <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" />
-                </SelectParameters>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [Memo]" OnSelecting="SqlDataSource2_Selecting">
             </asp:SqlDataSource>
             <br />
 
