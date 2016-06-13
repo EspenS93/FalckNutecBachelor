@@ -76,11 +76,6 @@
             </asp:SqlDataSource>
         </div>
         <div>
-            <h2>Skriv Memo:</h2>
-            <asp:TextBox ID="SkrivMemo" runat="server" TextMode="MultiLine"></asp:TextBox>
-            <asp:Button ID="MemoKnapp" runat="server" OnClick="MemoKnapp_Click" Text="Send" />
-        </div>
-        <div>
             <h2>Memo: </h2>
             <asp:DataList ID="memo" runat="server" DataSourceID="SqlDataSource2" BorderColor="Black" GridLines="Both">
                 <ItemTemplate>

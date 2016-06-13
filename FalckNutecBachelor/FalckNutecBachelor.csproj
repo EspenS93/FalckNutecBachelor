@@ -321,6 +321,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="AdminSkjema.aspx" />
+    <Content Include="StartskjemaLes.aspx" />
     <Content Include="Startskjema.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="AdministrereBruker.aspx" />
@@ -578,6 +579,13 @@
     </Compile>
     <Compile Include="AdminSkjema.aspx.designer.cs">
       <DependentUpon>AdminSkjema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StartskjemaLes.aspx.cs">
+      <DependentUpon>StartskjemaLes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StartskjemaLes.aspx.designer.cs">
+      <DependentUpon>StartskjemaLes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startskjema.aspx.cs">
       <DependentUpon>Startskjema.aspx</DependentUpon>

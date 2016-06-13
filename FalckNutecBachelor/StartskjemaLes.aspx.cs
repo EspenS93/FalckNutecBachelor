@@ -8,7 +8,7 @@ using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
-    public partial class Startskjema : Page
+    public partial class StartskjemaLes : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,10 +18,10 @@ namespace FalckNutecBachelor
             }
             else
             {
-                if (Roles.IsUserInRole("Reader"))
+                if (Roles.IsUserInRole("Writer"))
                 {
                     //ACCESS DENIED SIDE
-                    Response.Redirect("StartskjemaLes");
+                    Response.Redirect("Startskjema");
                 }
                 else if (Roles.IsUserInRole("Admin"))
                 {
@@ -64,7 +64,7 @@ namespace FalckNutecBachelor
         {
             if (avtaler2.SelectedRow != null)
             {
-                Response.Redirect("VisAvtale.aspx?AvtaleID=" + avtaler2.SelectedRow.Cells[0].Text);
+                Response.Redirect("VisAvtaleLes.aspx?AvtaleID=" + avtaler2.SelectedRow.Cells[0].Text);
             }
         }
         protected void apneSokeFelt_Click(object sender, EventArgs e)

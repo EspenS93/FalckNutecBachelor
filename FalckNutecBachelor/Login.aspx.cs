@@ -18,9 +18,12 @@ namespace FalckNutecBachelor
                 {
                     Response.Redirect("~/AdminSkjema.aspx");
                 }
-                else
+                else if(Roles.IsUserInRole("Writer"))
                 {
                     Response.Redirect("~/Startskjema.aspx");
+                }else
+                {
+                    Response.Redirect("~/StartskjemaLes.aspx");
                 }
 
             }
@@ -36,9 +39,13 @@ namespace FalckNutecBachelor
                 if (Roles.IsUserInRole(Login1.UserName,"Admin"))
                 {
                     Response.Redirect("~/AdminSkjema.aspx");
-                }else
+                }else if(Roles.IsUserInRole(Login1.UserName, "Writer"))
                 {
                     Response.Redirect("~/Startskjema.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/StartskjemaLes.aspx");
                 }
             }
             else

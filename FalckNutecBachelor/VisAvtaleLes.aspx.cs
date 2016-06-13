@@ -24,28 +24,6 @@ namespace FalckNutecBachelor
             "User Id=dbUser;" + "Password=Bachelor2016;");
             }
 
-        protected void MemoKnapp_Click(object sender, EventArgs e)
-        {
-            Label avtale = (Label)DataList1.Items[0].FindControl("BeskrivelseLabel");
-            SqlCommand ins = new SqlCommand("LagNyMemo", con);
-            ins.CommandType = CommandType.StoredProcedure;
-            ins.Parameters.AddWithValue("@Avtale",avtale.Text);
-            ins.Parameters.AddWithValue("@AnsattID", (int)WebSecurity.CurrentUserId);
-            ins.Parameters.AddWithValue("@Memo", SkrivMemo.Text);
-            con.Open();
-            try
-            {
-                ins.ExecuteNonQuery();
-                memo.DataBind();
-            }
-            catch (SqlException sqlEX)
-            {
-
-                throw;
-            }
-            con.Close();
-        }
-
         protected void DownloadFile(object sender, EventArgs e)
         {
             int id = int.Parse((sender as LinkButton).CommandArgument);
