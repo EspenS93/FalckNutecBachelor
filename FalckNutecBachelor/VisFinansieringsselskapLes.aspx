@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="VisFinansieringsselskapLes.aspx.cs" Inherits="FalckNutecBachelor.VisFinansieringsselskap" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="VisFinansieringsselskapLes.aspx.cs" Inherits="FalckNutecBachelor.VisFinansieringsselskapLes" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

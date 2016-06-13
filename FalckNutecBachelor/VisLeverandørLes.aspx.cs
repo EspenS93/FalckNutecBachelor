@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FalckNutecBachelor
 {
-    public partial class VisLeverandør : System.Web.UI.Page
+    public partial class VisLeverandørLes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

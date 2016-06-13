@@ -54,18 +54,5 @@
         <asp:Button ID="AvtaleKnapp" runat="server" Text="Hent Avtale" OnClick="AvtaleKnapp_Click"/>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentAvtaler" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
         </div>
-        <!--<div>
-            <h3>Rapporter</h3>
-            <p>
-                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Navn" DataValueField="Navn">
-                    <asp:ListItem>Klikk for å velge leverandør</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource>
-                <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="Beskrivelse" DataValueField="Beskrivelse">
-                    <asp:ListItem>Seksjon/Kategori/Ansatt</asp:ListItem>
-                </asp:DropDownList><asp:SqlDataSource runat="server" ID="SqlDataSource3" ConnectionString='<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>' SelectCommand="SELECT [Beskrivelse] FROM [Avtaler]"></asp:SqlDataSource>
-            </p>
-        </div>-->
     </form>
 </asp:Content>

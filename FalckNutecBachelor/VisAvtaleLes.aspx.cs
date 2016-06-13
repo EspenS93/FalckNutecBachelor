@@ -10,7 +10,7 @@ using WebMatrix.WebData;
 
 namespace FalckNutecBachelor
 {
-    public partial class VisAvtale : System.Web.UI.Page
+    public partial class VisAvtaleLes : System.Web.UI.Page
     {
         SqlConnection con;
         protected void Page_Load(object sender, EventArgs e)

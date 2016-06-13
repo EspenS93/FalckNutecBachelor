@@ -10,7 +10,7 @@
 namespace FalckNutecBachelor {
     
     
-    public partial class VisLeverandør {
+    public partial class VisLeverandørLes {
         
         /// <summary>
         /// DataList1 control.
