@@ -53,5 +53,10 @@ namespace FalckNutecBachelor
             }
             con.Close();
         }
+
+        protected void NavnText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
