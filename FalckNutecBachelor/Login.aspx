@@ -6,12 +6,8 @@
         <h1>&nbsp;</h1>
         <h1>Velkommen til Falck Nutec AS</h1>
         <p class="lead">Her kan du logge inn og registrere avtaler for bedriften.</p>
-        <form>
             <asp:Login ID="Login1" runat="server" OnAuthenticate="Login_Authenticate">
             </asp:Login>
-        </form>
-       
-        <p></p>
     </div>
     <div class="links">
     </div>
