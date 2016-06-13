@@ -7,35 +7,35 @@
             <h1>Ny Avtale </h1>
             <table>
                 <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Beskrivelse:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Beskrivelse:</p></td>
             <td><asp:TextBox ID="NavnText" runat="server"></asp:TextBox></td>
                     </tr>
             <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Leverandør:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Leverandør:</p></td>
                 <td><asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="Navn" DataValueField="Navn">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn] FROM [Leverandør]"></asp:SqlDataSource></td>
                 </tr>
             <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Finansieringsselskap:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Finansieringsselskap:</p></td>
                 <td><asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="Navn" DataValueField="Navn">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Navn] FROM [Finansieringsselskap]"></asp:SqlDataSource></td>
                 </tr>
             <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Ansvarlig:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Ansvarlig:</p></td>
                 <td><asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource5" DataTextField="Etternavn" DataValueField="Etternavn">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Etternavn] FROM [Ansatte]"></asp:SqlDataSource></td>
                 </tr>
             <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Lokasjon:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Lokasjon:</p></td>
                 <td><asp:DropDownList ID="DropDownList6" runat="server" DataSourceID="SqlDataSource6" DataTextField="Lokasjon" DataValueField="Lokasjon">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Lokasjon] FROM [Lokasjon]"></asp:SqlDataSource></td>
                 </tr>
             <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right;">Seksjon:</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left;">Seksjon:</p></td>
                 <td><asp:DropDownList ID="DropDownList7" runat="server" DataSourceID="SqlDataSource7" DataTextField="Seksjon" DataValueField="Seksjon">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Seksjon] FROM [Seksjoner]"></asp:SqlDataSource></td>
@@ -46,13 +46,13 @@
             <br />
             <table>
                 <tr>
-            <td style="width: 150px"><p style="text-align: right; width: 150px">Avtaletype:</p></td>
+            <td style="width: 150px"><p style="text-align: left; width: 150px">Avtaletype:</p></td>
                 <td><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="AvtaleType" DataValueField="AvtaleType">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [AvtaleType] FROM [Avtaletype]"></asp:SqlDataSource></td>
                     </tr>
                 <tr>
-            <td style="width: 150px"><p style="text-align: right; width: 150px">Kategori:</p></td>
+            <td style="width: 150px"><p style="text-align: left; width: 150px">Kategori:</p></td>
                 <td><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="Kategori" DataValueField="Kategori">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Kategori] FROM [Kategorier]"></asp:SqlDataSource></td>
@@ -86,7 +86,7 @@
             </p>
             <table>
                 <tr>
-            <td style="width: 150px"><p style="text-align: right; width: 150px">Status:</p></td>
+            <td style="width: 150px"><p style="text-align: left; width: 150px">Status:</p></td>
                 <td><asp:DropDownList ID="StatusList" runat="server">
                     <asp:ListItem>Aktiv</asp:ListItem>
                     <asp:ListItem Value="TrengerTilsyn">Trenger tilsyn</asp:ListItem>
@@ -94,7 +94,7 @@
                 </asp:DropDownList></td>
                     </tr>
                 <tr>
-            <td style="width: 150px"><p style="width: 150px; text-align: right">Autoforny</p></td>
+            <td style="width: 150px"><p style="width: 150px; text-align: left">Autoforny</p></td>
             <td><asp:CheckBox ID="CheckBox1" runat="server" /></td>
                     </tr>
             </table>
