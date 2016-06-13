@@ -23,12 +23,6 @@ namespace FalckNutecBachelor
            "Initial Catalog = AvtaleDatabase;" +
            "User Id=dbUser;" + "Password=Bachelor2016;");
             WebSecurity.InitializeDatabaseConnection("AvtaleDatabaseConnectionString2", "Ansatte","ID","NOnr",true);
-            WebMail.SmtpServer = "smtp.gmail.com";
-            WebMail.SmtpPort = 587;
-            WebMail.EnableSsl = true;
-            WebMail.UserName = "bachelortesty@gmail.com";
-            WebMail.Password = "BachelorFalckNutec";
-            WebMail.From = "bachelortesty@gmail.com";
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
