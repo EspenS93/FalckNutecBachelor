@@ -1,24 +1,22 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LagNyKategori.aspx.cs" Inherits="FalckNutecBachelor.LagNyKategori" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" Title="Ny Kategori" AutoEventWireup="true" CodeBehind="LagNyKategori.aspx.cs" Inherits="FalckNutecBachelor.LagNyKategori" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <head>
-        <title>Ny Kategori</title>
-    </head>
-
-    <form id="form1">
+<div>
 
         <h1>Ny Kategori</h1>
-        <p>
-            Kategori:
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </p>
-
-        <p></p>
+    <table>
+        <tr>
+        <td style="width: 150px"><p style="width: 150px; text-align: left">Kategori:</p></td>
+                <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+        </tr>
+    </table>
+        <br />
         <asp:Button ID="Button1" runat="server" Text="Lag Ny Kategori" OnClick="Button1_Click" />
         <br />
         <asp:Label ID="svar" runat="server" Text="" Visible="false"></asp:Label>
+    
+</div>
 
-    </form>
 </asp:Content>
 
