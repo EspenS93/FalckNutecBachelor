@@ -9,53 +9,53 @@
                 <EditItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False"  />
                 <ItemTemplate>
                     Beskrivelse:
-                    <asp:TextBox ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Beskrivelse") %>' />
+                    <asp:TextBox ID="BeskrivelseLabel" runat="server" Text='<%# Eval("Beskrivelse") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <br />
                     AvtaleTypeID:
-                    <asp:DropDownList ID="AvtaleTypeIDLabel" runat="server" Text='<%# Eval("AvtaleTypeID") %>' DataSourceID="SqlDataSource5" DataTextField="AvtaleType" DataValueField="ID" />
+                    <asp:DropDownList ID="AvtaleTypeIDLabel" runat="server" Text='<%# Eval("AvtaleTypeID") %>' DataSourceID="SqlDataSource5" DataTextField="AvtaleType" DataValueField="ID" AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [AvtaleType] FROM [AvtaleType]"></asp:SqlDataSource>
                     <br />
                     KategoriID:
-                    <asp:DropDownList ID="KategoriIDLabel" runat="server" Text='<%# Eval("KategoriID") %>' DataSourceID="SqlDataSource6" DataTextField="Kategori" DataValueField="ID" />
+                    <asp:DropDownList ID="KategoriIDLabel" runat="server" Text='<%# Eval("KategoriID") %>' DataSourceID="SqlDataSource6" DataTextField="Kategori" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="DataList1_SelectedIndexChanged"/>
                     <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Kategori] FROM [Kategorier]"></asp:SqlDataSource>
                     <br />
                     LeverandørID:
-                    <asp:DropDownList ID="LeverandørIDLabel" runat="server" Text='<%# Eval("LeverandørID") %>' DataSourceID="SqlDataSource7" DataTextField="Navn" DataValueField="ID" />
+                    <asp:DropDownList ID="LeverandørIDLabel" runat="server" Text='<%# Eval("LeverandørID") %>' DataSourceID="SqlDataSource7" DataTextField="Navn" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" />
                     <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Navn] FROM [Leverandør]"></asp:SqlDataSource>
                     <br />
                     FinansieringsselskapID:
-                    <asp:DropDownList ID="FinansieringsselskapIDLabel" runat="server" Text='<%# Eval("FinansieringsselskapID") %>' DataSourceID="SqlDataSource8" DataTextField="Navn" DataValueField="ID" />
+                    <asp:DropDownList ID="FinansieringsselskapIDLabel" runat="server" Text='<%# Eval("FinansieringsselskapID") %>' DataSourceID="SqlDataSource8" DataTextField="Navn" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" />
                     <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Navn] FROM [Finansieringsselskap]"></asp:SqlDataSource>
                     <br />
                     AnsvarligID:
-                    <asp:DropDownList ID="AnsvarligIDLabel" runat="server" Text='<%# Eval("AnsvarligID") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" />
+                    <asp:DropDownList ID="AnsvarligIDLabel" runat="server" Text='<%# Eval("AnsvarligID") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" />
                     <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], (SELECT [Fornavn]+', '+ [Etternavn]) FROM [Ansatte]"></asp:SqlDataSource>
                     <br />
                     LokasjonID:
-                    <asp:DropDownList ID="LokasjonIDLabel" runat="server" Text='<%# Eval("LokasjonID") %>' DataSourceID="SqlDataSource10" DataTextField="Lokasjon" DataValueField="ID" />
+                    <asp:DropDownList ID="LokasjonIDLabel" runat="server" Text='<%# Eval("LokasjonID") %>' DataSourceID="SqlDataSource10" DataTextField="Lokasjon" DataValueField="ID" AutoPostBack="true" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" />
                     <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [ID], [Lokasjon] FROM [Lokasjon]"></asp:SqlDataSource>
                     <br />
                     stage:
-                    <asp:DropDownList ID="stageLabel" runat="server" Text='<%# Eval("stage") %>' >
+                    <asp:DropDownList ID="stageLabel" runat="server" Text='<%# Eval("stage") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" >
                         <asp:ListItem>Aktiv</asp:ListItem>
                         <asp:ListItem>Utgående</asp:ListItem>
                         <asp:ListItem>Utgått</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     StartDato:
-                    <asp:TextBox ID="StartDatoLabel" runat="server" Text='<%# Eval("StartDato") %>' />
+                    <asp:TextBox ID="StartDatoLabel" runat="server" Text='<%# Eval("StartDato") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <br />
                     SluttDato:
-                    <<asp:TextBox ID="SluttDatoLabel" runat="server" Text='<%# Eval("SluttDato") %>' />
+                    <<asp:TextBox ID="SluttDatoLabel" runat="server" Text='<%# Eval("SluttDato") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <br />
                     AnsattRegistrert:
-                   <asp:DropDownList ID="AnsattRegistrertLabel" runat="server" Text='<%# Eval("AnsattRegistrert") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" />
+                   <asp:DropDownList ID="AnsattRegistrertLabel" runat="server" Text='<%# Eval("AnsattRegistrert") %>' DataSourceID="SqlDataSource9" DataTextField="Column1" DataValueField="ID" AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <br />
                     FornyAuto:
-                    <asp:CheckBox ID="FornyAutoLabel" runat="server" Text='<%# Eval("FornyAuto") %>' />
+                    <asp:CheckBox ID="FornyAutoLabel" runat="server" Text='<%# Eval("FornyAuto") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged" />
                     <br />
                     Frist:
-                    <asp:TextBox ID="FristLabel" runat="server" Text='<%# Eval("Frist") %>' />
+                    <asp:TextBox ID="FristLabel" runat="server" Text='<%# Eval("Frist") %>' AutoPostBack="true" OnTextChanged="DataList1_SelectedIndexChanged"/>
                     <br />
                     <br />
                 </ItemTemplate>
