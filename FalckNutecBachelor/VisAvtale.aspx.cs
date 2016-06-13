@@ -35,6 +35,7 @@ namespace FalckNutecBachelor
         {
             SqlCommand upd = new SqlCommand("UpdateAvtale", con);
             upd.CommandType = CommandType.StoredProcedure;
+            upd.Parameters.AddWithValue("@Id", Request.QueryString[""]);
             upd.Parameters.AddWithValue("@Navn", ((TextBox)DataList1.Items[0].FindControl("NavnLabel")).Text);
             upd.Parameters.AddWithValue("@AvtaleType", ((DropDownList)DataList1.Items[0].FindControl("AvtaleTypeLabel")).SelectedValue);
             upd.Parameters.AddWithValue("@Kategori", ((DropDownList)DataList1.Items[0].FindControl("KategoriLabel")).SelectedValue);

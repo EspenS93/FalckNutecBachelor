@@ -82,7 +82,10 @@
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT * FROM [PDF]" OnSelecting="SqlDataSource3_Selecting">
             </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="SELECT [Beskrivelse], [AvtaleTypeID], [KategoriID], [LeverandørID], [FinansieringsselskapID], [AnsvarligID], [LokasjonID], [stage], [StartDato], [SluttDato], [AnsattRegistrert], [FornyAuto], [Frist] FROM [Avtaler]" OnSelecting="SqlDataSource1_Selecting">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AvtaleDatabaseConnectionString2 %>" SelectCommand="HentEnAvtale" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="AvtaleID" QueryStringField="AvtaleID" Type="Int32" DefaultValue="" />
+                </SelectParameters>
             </asp:SqlDataSource>
             
 
